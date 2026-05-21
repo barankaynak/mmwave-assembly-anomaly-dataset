@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite it using the metadata below."
+title: "mmWave Assembly Anomaly Detection Dataset"
+abstract: >
+  Dataset and code supporting the paper "A Non-Invasive Monitoring Framework
+  for Computer-Integrated Manual Assembly: mmWave Sensing with Deep Temporal
+  Models". Contains raw mmWave radar point-cloud recordings (TI IWR6843ISK,
+  no DCA1000EVM), Time-of-Flight distance measurements, synchronized and
+  labelled merged data, trained CNN-GRU model weights, and analysis notebooks
+  for six experimental sessions covering normal assembly, sequence anomalies,
+  and pacing anomalies.
+authors:
+  - family-names: Kaynak
+    given-names: Baran
+    orcid: "https://orcid.org/0000-0002-9004-2639"
+    affiliation: >
+      Department of Information Systems Engineering, Sakarya University, Türkiye;
+      Department of Industrial and Systems Engineering, The University of Iowa, USA
+    email: kaynak@sakarya.edu.tr
+  - family-names: Kaynak
+    given-names: Sümeyye
+    orcid: "https://orcid.org/0000-0002-7500-4001"
+    affiliation: >
+      Department of Computer Engineering, Sakarya University, Türkiye;
+      Department of Industrial and Systems Engineering, The University of Iowa, USA
+    email: sumeyye@sakarya.edu.tr
+  - family-names: Kusiak
+    given-names: Andrew
+    orcid: "https://orcid.org/0000-0003-4393-1385"
+    affiliation: >
+      Department of Industrial and Systems Engineering, The University of Iowa, USA
+    email: andrew-kusiak@uiowa.edu
+version: "1.0.0"
+date-released: "2026-05-21"
+license: CC-BY-4.0
+repository-code: "https://github.com/barankaynak/mmwave-assembly-anomaly-dataset"
+keywords:
+  - mmWave radar
+  - manual assembly monitoring
+  - anomaly detection
+  - computer-integrated manufacturing
+  - deep learning
+  - CNN-GRU
+  - Temporal Fusion Transformer
+  - point cloud
+  - Industry 4.0
+  - privacy-preserving sensing
+references:
+  - type: article
+    authors:
+      - family-names: Kaynak
+        given-names: Baran
+      - family-names: Kaynak
+        given-names: Sümeyye
+      - family-names: Kusiak
+        given-names: Andrew
+    title: >
+      A Non-Invasive Monitoring Framework for Computer-Integrated Manual
+      Assembly: mmWave Sensing with Deep Temporal Models
+    journal: International Journal of Computer Integrated Manufacturing
+    year: 2026
+    status: submitted

@@ -1,0 +1,36 @@
+Experiment Information
+=====================
+Date: Thu May 15 12:08:38 PM CDT 2025
+Directory: experiment_data/experiment_2025_05_15_12_08_38
+Virtual Environment: /home/kaynak/Github/mmwave/mmwave_sensor/venv
+Kernel: 6.8.0-60-generic
+Python Version: Python 3.12.3
+
+Installed Packages:
+annotated-types==0.7.0
+anyio==4.8.0
+av==14.1.0
+click==8.1.8
+contourpy==1.3.1
+cycler==0.12.1
+fastapi==0.115.6
+fonttools==4.55.3
+h11==0.14.0
+idna==3.10
+kiwisolver==1.4.8
+matplotlib==3.10.0
+numpy==1.26.4
+opencv-python==4.11.0.86
+packaging==24.2
+pillow==11.1.0
+pydantic==2.10.5
+pydantic_core==2.27.2
+pyparsing==3.2.1
+pyserial==3.5
+python-dateutil==2.9.0.post0
+six==1.17.0
+sniffio==1.3.1
+starlette==0.41.3
+typing_extensions==4.12.2
+uvicorn==0.34.0
+websockets==14.2

@@ -1,0 +1,74 @@
+[
+  {
+    "test_accuracy": 0.8938461538461538,
+    "macro_f1": 0.8805576987911157,
+    "weighted_f1": 0.8947957544569783,
+    "n_params": 1921446,
+    "name": "full_L5_K48",
+    "L": 5,
+    "K": 48,
+    "n_train": 12998,
+    "n_test": 3250,
+    "wall_seconds": 79.7
+  },
+  {
+    "test_accuracy": 0.648,
+    "macro_f1": 0.6285701365781741,
+    "weighted_f1": 0.649142254727386,
+    "n_params": 388774,
+    "name": "cnn_only_L5_K48",
+    "L": 5,
+    "K": 48,
+    "n_train": 12998,
+    "n_test": 3250,
+    "wall_seconds": 23.2
+  },
+  {
+    "test_accuracy": 0.8499384993849939,
+    "macro_f1": 0.8277748809175831,
+    "weighted_f1": 0.8526806336822841,
+    "n_params": 1921446,
+    "name": "full_L3_K48",
+    "L": 3,
+    "K": 48,
+    "n_train": 13008,
+    "n_test": 3252,
+    "wall_seconds": 66.8
+  },
+  {
+    "test_accuracy": 0.9190270935960592,
+    "macro_f1": 0.9054530002813562,
+    "weighted_f1": 0.919523994235817,
+    "n_params": 1921446,
+    "name": "full_L7_K48",
+    "L": 7,
+    "K": 48,
+    "n_train": 12988,
+    "n_test": 3248,
+    "wall_seconds": 99.5
+  },
+  {
+    "test_accuracy": 0.9126153846153846,
+    "macro_f1": 0.8994430268454585,
+    "weighted_f1": 0.9136010922856453,
+    "n_params": 938406,
+    "name": "full_L5_K32",
+    "L": 5,
+    "K": 32,
+    "n_train": 12998,
+    "n_test": 3250,
+    "wall_seconds": 65.1
+  },
+  {
+    "test_accuracy": 0.8652307692307692,
+    "macro_f1": 0.8466216397500256,
+    "weighted_f1": 0.8671352197694483,
+    "n_params": 3297702,
+    "name": "full_L5_K64",
+    "L": 5,
+    "K": 64,
+    "n_train": 12998,
+    "n_test": 3250,
+    "wall_seconds": 143.4
+  }
+]
