@@ -1,6 +1,6 @@
 # Dataset: A Non-Invasive Monitoring Framework for Computer-Integrated Manual Assembly
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20323005.svg)](https://doi.org/10.5281/zenodo.20323005)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20323005-blue)](https://doi.org/10.5281/zenodo.20323005)
 
 **Paper:** "A Non-Invasive Monitoring Framework for Computer-Integrated Manual Assembly: mmWave Sensing with Deep Temporal Models"  
 **Authors:** Baran Kaynak, Sümeyye Kaynak, Andrew Kusiak  
