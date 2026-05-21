@@ -34,6 +34,8 @@ version: "1.0.0"
 date-released: "2026-05-21"
 license: CC-BY-4.0
 repository-code: "https://github.com/barankaynak/mmwave-assembly-anomaly-dataset"
+doi: "10.5281/zenodo.20323005"
+url: "https://doi.org/10.5281/zenodo.20323005"
 keywords:
   - mmWave radar
   - manual assembly monitoring

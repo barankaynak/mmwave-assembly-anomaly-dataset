@@ -117,7 +117,7 @@ The dataset is released under **CC BY 4.0**. The code is released under **MIT Li
 ## Repository
 
 **GitHub:** https://github.com/barankaynak/mmwave-assembly-anomaly-dataset  
-**Zenodo DOI:** *(to be added after first release)*
+**Zenodo DOI:** https://doi.org/10.5281/zenodo.20323005
 
 ---
 
