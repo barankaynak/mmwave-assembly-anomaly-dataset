@@ -1,5 +1,7 @@
 # Dataset: A Non-Invasive Monitoring Framework for Computer-Integrated Manual Assembly
 
+[![DOI](https://zenodo.org/badge/1245400645.svg)](https://doi.org/10.5281/zenodo.20323005)
+
 **Paper:** "A Non-Invasive Monitoring Framework for Computer-Integrated Manual Assembly: mmWave Sensing with Deep Temporal Models"  
 **Authors:** Baran Kaynak, Sümeyye Kaynak, Andrew Kusiak  
 **Journal:** International Journal of Computer Integrated Manufacturing (submitted 2026)  
@@ -123,10 +125,35 @@ The dataset is released under **CC BY 4.0**. The code is released under **MIT Li
 
 ## Citation
 
-If you use this dataset or code, please cite:
+If you use this dataset or code, please cite the paper **and** the dataset record:
 
+### Cite the paper
+
+```bibtex
+@article{kaynak2026mmwave,
+  author  = {Kaynak, Baran and Kaynak, S\"{u}meyye and Kusiak, Andrew},
+  title   = {A Non-Invasive Monitoring Framework for Computer-Integrated Manual
+             Assembly: {mmWave} Sensing with Deep Temporal Models},
+  journal = {International Journal of Computer Integrated Manufacturing},
+  year    = {2026},
+  note    = {submitted}
+}
 ```
-Kaynak, B., Kaynak, S., & Kusiak, A. (2026). A Non-Invasive Monitoring Framework for
-Computer-Integrated Manual Assembly: mmWave Sensing with Deep Temporal Models.
-International Journal of Computer Integrated Manufacturing.
+
+### Cite the dataset
+
+```bibtex
+@dataset{kaynak2026dataset,
+  author    = {Kaynak, Baran and Kaynak, S\"{u}meyye and Kusiak, Andrew},
+  title     = {{mmWave} Assembly Anomaly Detection Dataset},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {1.0.0},
+  doi       = {10.5281/zenodo.20323005},
+  url       = {https://doi.org/10.5281/zenodo.20323005}
+}
 ```
+
+### Plain-text (APA)
+
+Kaynak, B., Kaynak, S., & Kusiak, A. (2026). *mmWave Assembly Anomaly Detection Dataset* (v1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.20323005
