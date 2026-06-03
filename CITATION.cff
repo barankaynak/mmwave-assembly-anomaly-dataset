@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this dataset or code, please cite it using the metadata below."
 title: "mmWave Assembly Anomaly Detection Dataset"
 abstract: >
-  Dataset and code supporting the paper "A Non-Invasive Monitoring Framework
-  for Computer-Integrated Manual Assembly: mmWave Sensing with Deep Temporal
+  Dataset and code supporting the paper "Privacy-Preserving, Low-Cost mmWave
+  Anomaly Detection for Computer-Integrated Manual Assembly with Deep Temporal
   Models". Contains raw mmWave radar point-cloud recordings (TI IWR6843ISK,
   no DCA1000EVM), Time-of-Flight distance measurements, synchronized and
   labelled merged data, trained CNN-GRU model weights, and analysis notebooks
@@ -57,8 +57,8 @@ references:
       - family-names: Kusiak
         given-names: Andrew
     title: >
-      A Non-Invasive Monitoring Framework for Computer-Integrated Manual
-      Assembly: mmWave Sensing with Deep Temporal Models
+      Privacy-Preserving, Low-Cost mmWave Anomaly Detection for
+      Computer-Integrated Manual Assembly with Deep Temporal Models
     journal: International Journal of Computer Integrated Manufacturing
     year: 2026
     status: submitted

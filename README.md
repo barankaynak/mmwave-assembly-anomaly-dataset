@@ -1,8 +1,8 @@
-# Dataset: A Non-Invasive Monitoring Framework for Computer-Integrated Manual Assembly
+# Dataset: Privacy-Preserving, Low-Cost mmWave Anomaly Detection for Computer-Integrated Manual Assembly
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20323005-blue)](https://doi.org/10.5281/zenodo.20323005)
 
-**Paper:** "A Non-Invasive Monitoring Framework for Computer-Integrated Manual Assembly: mmWave Sensing with Deep Temporal Models"  
+**Paper:** "Privacy-Preserving, Low-Cost mmWave Anomaly Detection for Computer-Integrated Manual Assembly with Deep Temporal Models"  
 **Authors:** Baran Kaynak, Sümeyye Kaynak, Andrew Kusiak  
 **Journal:** International Journal of Computer Integrated Manufacturing (submitted 2026)  
 **Funding:** TUBITAK 2219 Research Program, Project No. 1059B1923025
@@ -132,8 +132,8 @@ If you use this dataset or code, please cite the paper **and** the dataset recor
 ```bibtex
 @article{kaynak2026mmwave,
   author  = {Kaynak, Baran and Kaynak, S\"{u}meyye and Kusiak, Andrew},
-  title   = {A Non-Invasive Monitoring Framework for Computer-Integrated Manual
-             Assembly: {mmWave} Sensing with Deep Temporal Models},
+  title   = {Privacy-Preserving, Low-Cost {mmWave} Anomaly Detection for
+             Computer-Integrated Manual Assembly with Deep Temporal Models},
   journal = {International Journal of Computer Integrated Manufacturing},
   year    = {2026},
   note    = {submitted}
