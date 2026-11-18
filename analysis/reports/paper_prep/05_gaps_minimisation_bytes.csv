@@ -1,0 +1,13 @@
+points_per_frame_statistic,n_points,variant,bytes_per_frame,raw_adc_bytes_per_frame,ratio_raw_over_pointcloud
+median (recorded frames),9.0,"V1 full on-chip stream as configured (header+TLV1+TLV7+TLV2 range profile+TLV6 stats, padded to 32 B)",544.0,57344,105.41176470588235
+median (recorded frames),9.0,V2 point-cloud TLVs only (TLV1+TLV7 incl. 8-B TLV headers),196.0,57344,292.57142857142856
+median (recorded frames),9.0,"V3 payload the pipeline reads (x, y, v float32 + snr uint16 = 14 B/point)",126.0,57344,455.1111111111111
+p95 (recorded frames),15.0,"V1 full on-chip stream as configured (header+TLV1+TLV7+TLV2 range profile+TLV6 stats, padded to 32 B)",672.0,57344,85.33333333333333
+p95 (recorded frames),15.0,V2 point-cloud TLVs only (TLV1+TLV7 incl. 8-B TLV headers),316.0,57344,181.46835443037975
+p95 (recorded frames),15.0,"V3 payload the pipeline reads (x, y, v float32 + snr uint16 = 14 B/point)",210.0,57344,273.06666666666666
+mean over ALL radar frames incl. empty,7.545845347313238,"V1 full on-chip stream as configured (header+TLV1+TLV7+TLV2 range profile+TLV6 stats, padded to 32 B)",512.0,57344,112.0
+mean over ALL radar frames incl. empty,7.545845347313238,V2 point-cloud TLVs only (TLV1+TLV7 incl. 8-B TLV headers),166.91690694626476,57344,343.54818244062386
+mean over ALL radar frames incl. empty,7.545845347313238,"V3 payload the pipeline reads (x, y, v float32 + snr uint16 = 14 B/point)",105.64183486238532,57344,542.8152594537888
+max recorded,27.0,"V1 full on-chip stream as configured (header+TLV1+TLV7+TLV2 range profile+TLV6 stats, padded to 32 B)",896.0,57344,64.0
+max recorded,27.0,V2 point-cloud TLVs only (TLV1+TLV7 incl. 8-B TLV headers),556.0,57344,103.13669064748201
+max recorded,27.0,"V3 payload the pipeline reads (x, y, v float32 + snr uint16 = 14 B/point)",378.0,57344,151.7037037037037

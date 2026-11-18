@@ -1,0 +1,19 @@
+durum_tanimi,tur,kategori,n,oran,n_kesin_once,n_esit,n_tekil_dongu
+debounce'lu (BIRINCIL),seq135,(i) radar yanlis kutuyu gordu (tahmin = anomali kutusu),8,0.47058823529411764,0,8,8
+debounce'lu (BIRINCIL),seq135,(ii) oturuma ozgu zamanlama (Box1 dwell / Box1->X),9,0.5294117647058824,9,0,2
+debounce'lu (BIRINCIL),seq135,TOPLAM,17,1.0,9,8,10
+debounce'lu (BIRINCIL),seq145,(i) radar yanlis kutuyu gordu (tahmin = anomali kutusu),12,0.7058823529411765,4,8,6
+debounce'lu (BIRINCIL),seq145,(ii) oturuma ozgu zamanlama (Box1 dwell / Box1->X),5,0.29411764705882354,5,0,1
+debounce'lu (BIRINCIL),seq145,TOPLAM,17,1.0,9,8,7
+debounce'lu (BIRINCIL),ikisi,(i) radar yanlis kutuyu gordu (tahmin = anomali kutusu),20,0.5882352941176471,4,16,14
+debounce'lu (BIRINCIL),ikisi,(ii) oturuma ozgu zamanlama (Box1 dwell / Box1->X),14,0.4117647058823529,14,0,3
+debounce'lu (BIRINCIL),ikisi,TOPLAM,34,1.0,18,16,17
+ham y_pred (duyarlilik),seq135,(i) radar yanlis kutuyu gordu (tahmin = anomali kutusu),8,0.47058823529411764,0,8,8
+ham y_pred (duyarlilik),seq135,(ii) oturuma ozgu zamanlama (Box1 dwell / Box1->X),9,0.5294117647058824,9,0,2
+ham y_pred (duyarlilik),seq135,TOPLAM,17,1.0,9,8,10
+ham y_pred (duyarlilik),seq145,(i) radar yanlis kutuyu gordu (tahmin = anomali kutusu),10,0.5882352941176471,4,6,5
+ham y_pred (duyarlilik),seq145,(ii) oturuma ozgu zamanlama (Box1 dwell / Box1->X),7,0.4117647058823529,5,2,2
+ham y_pred (duyarlilik),seq145,TOPLAM,17,1.0,9,8,7
+ham y_pred (duyarlilik),ikisi,(i) radar yanlis kutuyu gordu (tahmin = anomali kutusu),18,0.5294117647058824,4,14,13
+ham y_pred (duyarlilik),ikisi,(ii) oturuma ozgu zamanlama (Box1 dwell / Box1->X),16,0.47058823529411764,14,2,4
+ham y_pred (duyarlilik),ikisi,TOPLAM,34,1.0,18,16,17

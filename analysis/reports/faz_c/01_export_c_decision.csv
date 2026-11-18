@@ -1,0 +1,4 @@
+enc,rdata_full,kb,d_b2,d_float,fit192,fit256,fit512,f1_ok_b2,f1_ok_float
+a,429920,419.84375,-0.010327019809506432,0.0,False,False,True,True,True
+b,245696,239.9375,-0.010327019809506432,0.0,False,True,True,True,True
+c,194496,189.9375,-0.010327019809506432,0.0,True,True,True,True,True

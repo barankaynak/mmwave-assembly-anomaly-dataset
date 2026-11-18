@@ -1,0 +1,14 @@
+{
+ "torch": "2.6.0+cu124",
+ "cuda": "12.4",
+ "cudnn": 90100,
+ "gpu": "NVIDIA GeForce RTX 3090",
+ "max_epochs": 120,
+ "seeds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "smoke": false
+}

@@ -1,0 +1,8 @@
+item,value,passed
+"A1 detection >= 0.95 at D3' for omission, swap, far repeat, subst_4, foreign_4",omission_2 1.000; swap_1-5-2 1.000; repeat_2_far 1.000; subst_4 1.000; foreign_4 1.000,True
+A2 subst_3 readable-conditional detection >= 0.95 (D3'),1.000 (n = 1403 readable of 2150),True
+A3 mid-dwell flicker multi-match S_E <= 1.2 in every parent (Box-2 block >= 6 frames),max 1.7933 over n = 46,False
+A4a the 51 real normal S_E are 50 x 0 and 1 x 1.09 (cycle 19),50 x 0; positive: cycle 19 = 1.0900,True
+A4b D3' normal alarm set equals the Phase A D3 set,"D3' [0, 4, 19, 48] vs Phase A D3 [0, 4, 19, 48]",True
+A5 unit cases of section 2.4 pass,16 asserted DP cases (+ collapse/traceback/plain asserts) at import,True
+A6 D1 exhibit reproduces the tie mechanism (D1 detection < 0.5 on subst_4 or omission),subst_4 0.353; omission 0.360,True

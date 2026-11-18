@@ -1,0 +1,83 @@
+[13:32:26] GPU NVIDIA GeForce RTX 3090 free=23.30 GB torch 2.6.0+cu124
+[13:32:26] === replica 0 fold 0
+[W1110 13:32:26.585395251 NNPACK.cpp:62] Could not initialize NNPACK! Reason: Unsupported hardware.
+[13:32:26] [cnngru S1local f0] device=cuda seed=20262104 params=1,921,446 train=11749 val=1199 test=3300 | train class counts=[6872, 1702, 1054, 455, 409, 1257] cw=[0.2800000011920929, 1.149999976158142, 1.8600000143051147, 4.300000190734863, 4.789999961853027, 1.559999942779541]
+[13:32:30] [cnngru S1local f0] ep   1 train_loss=0.6107 val_loss=0.7064 * bad= 0 lr=4.98e-04 2.6s
+[13:32:32] [cnngru S1local f0] ep   2 train_loss=0.4194 val_loss=0.6482 * bad= 0 lr=4.96e-04 1.9s
+[13:32:34] [cnngru S1local f0] ep   3 train_loss=0.4140 val_loss=0.6901   bad= 1 lr=4.94e-04 1.9s
+[13:32:36] [cnngru S1local f0] ep   4 train_loss=0.3932 val_loss=0.6693   bad= 2 lr=4.92e-04 1.9s
+[13:32:38] [cnngru S1local f0] ep   5 train_loss=0.3959 val_loss=0.6627   bad= 3 lr=4.91e-04 1.9s
+[13:32:40] [cnngru S1local f0] ep   6 train_loss=0.3769 val_loss=0.7418   bad= 4 lr=4.89e-04 1.9s
+[13:32:42] [cnngru S1local f0] ep   7 train_loss=0.3768 val_loss=0.6584   bad= 5 lr=4.87e-04 1.9s
+[13:32:44] [cnngru S1local f0] ep   8 train_loss=0.3680 val_loss=0.7407   bad= 6 lr=4.85e-04 1.9s
+[13:32:45] [cnngru S1local f0] ep   9 train_loss=0.3651 val_loss=0.5855 * bad= 0 lr=4.83e-04 1.9s
+[13:32:47] [cnngru S1local f0] ep  10 train_loss=0.3497 val_loss=0.6558   bad= 1 lr=4.81e-04 1.9s
+[13:32:49] [cnngru S1local f0] ep  11 train_loss=0.3484 val_loss=0.5986   bad= 2 lr=4.79e-04 1.9s
+[13:32:51] [cnngru S1local f0] ep  12 train_loss=0.3341 val_loss=0.6235   bad= 3 lr=4.78e-04 1.9s
+[13:32:53] [cnngru S1local f0] ep  13 train_loss=0.3292 val_loss=0.5689 * bad= 0 lr=4.76e-04 1.9s
+[13:32:55] [cnngru S1local f0] ep  14 train_loss=0.3147 val_loss=0.5838   bad= 1 lr=4.74e-04 1.9s
+[13:32:57] [cnngru S1local f0] ep  15 train_loss=0.3161 val_loss=0.5331 * bad= 0 lr=4.72e-04 1.9s
+[13:32:59] [cnngru S1local f0] ep  16 train_loss=0.3030 val_loss=0.5287 * bad= 0 lr=4.70e-04 1.9s
+[13:33:01] [cnngru S1local f0] ep  17 train_loss=0.2945 val_loss=0.5354   bad= 1 lr=4.68e-04 1.9s
+[13:33:03] [cnngru S1local f0] ep  18 train_loss=0.2826 val_loss=0.5235 * bad= 0 lr=4.67e-04 1.9s
+[13:33:05] [cnngru S1local f0] ep  19 train_loss=0.2770 val_loss=0.5972   bad= 1 lr=4.65e-04 1.9s
+[13:33:07] [cnngru S1local f0] ep  20 train_loss=0.2642 val_loss=0.5735   bad= 2 lr=4.63e-04 1.9s
+[13:33:09] [cnngru S1local f0] ep  21 train_loss=0.2564 val_loss=0.5500   bad= 3 lr=4.61e-04 1.9s
+[13:33:10] [cnngru S1local f0] ep  22 train_loss=0.2458 val_loss=0.5083 * bad= 0 lr=4.60e-04 1.9s
+[13:33:12] [cnngru S1local f0] ep  23 train_loss=0.2368 val_loss=0.4519 * bad= 0 lr=4.58e-04 1.9s
+[13:33:14] [cnngru S1local f0] ep  24 train_loss=0.2134 val_loss=0.4405 * bad= 0 lr=4.56e-04 1.9s
+[13:33:16] [cnngru S1local f0] ep  25 train_loss=0.2178 val_loss=0.4925   bad= 1 lr=4.54e-04 1.9s
+[13:33:18] [cnngru S1local f0] ep  26 train_loss=0.2164 val_loss=0.5244   bad= 2 lr=4.53e-04 1.9s
+[13:33:20] [cnngru S1local f0] ep  27 train_loss=0.1999 val_loss=0.4796   bad= 3 lr=4.51e-04 1.9s
+[13:33:22] [cnngru S1local f0] ep  28 train_loss=0.1849 val_loss=0.4316 * bad= 0 lr=4.49e-04 1.9s
+[13:33:24] [cnngru S1local f0] ep  29 train_loss=0.1759 val_loss=0.4995   bad= 1 lr=4.47e-04 1.9s
+[13:33:26] [cnngru S1local f0] ep  30 train_loss=0.1647 val_loss=0.4261 * bad= 0 lr=4.46e-04 1.9s
+[13:33:28] [cnngru S1local f0] ep  31 train_loss=0.1652 val_loss=0.4980   bad= 1 lr=4.44e-04 1.9s
+[13:33:30] [cnngru S1local f0] ep  32 train_loss=0.1591 val_loss=0.4044 * bad= 0 lr=4.42e-04 1.9s
+[13:33:32] [cnngru S1local f0] ep  33 train_loss=0.1539 val_loss=0.4591   bad= 1 lr=4.41e-04 1.9s
+[13:33:34] [cnngru S1local f0] ep  34 train_loss=0.1416 val_loss=0.4752   bad= 2 lr=4.39e-04 1.9s
+[13:33:35] [cnngru S1local f0] ep  35 train_loss=0.1375 val_loss=0.4653   bad= 3 lr=4.37e-04 1.9s
+[13:33:37] [cnngru S1local f0] ep  36 train_loss=0.1397 val_loss=0.4474   bad= 4 lr=4.36e-04 1.9s
+[13:33:39] [cnngru S1local f0] ep  37 train_loss=0.1253 val_loss=0.4626   bad= 5 lr=4.34e-04 1.9s
+[13:33:41] [cnngru S1local f0] ep  38 train_loss=0.1246 val_loss=0.4327   bad= 6 lr=4.32e-04 1.9s
+[13:33:43] [cnngru S1local f0] ep  39 train_loss=0.1228 val_loss=0.3909 * bad= 0 lr=4.31e-04 1.9s
+[13:33:45] [cnngru S1local f0] ep  40 train_loss=0.1094 val_loss=0.4828   bad= 1 lr=4.29e-04 1.9s
+[13:33:47] [cnngru S1local f0] ep  41 train_loss=0.1055 val_loss=0.4135   bad= 2 lr=4.27e-04 1.9s
+[13:33:49] [cnngru S1local f0] ep  42 train_loss=0.1040 val_loss=0.4150   bad= 3 lr=4.26e-04 1.9s
+[13:33:51] [cnngru S1local f0] ep  43 train_loss=0.1030 val_loss=0.4417   bad= 4 lr=4.24e-04 1.9s
+[13:33:53] [cnngru S1local f0] ep  44 train_loss=0.1005 val_loss=0.4022   bad= 5 lr=4.22e-04 1.9s
+[13:33:55] [cnngru S1local f0] ep  45 train_loss=0.0930 val_loss=0.4316   bad= 6 lr=4.21e-04 1.9s
+[13:33:57] [cnngru S1local f0] ep  46 train_loss=0.0880 val_loss=0.4268   bad= 7 lr=4.19e-04 1.9s
+[13:33:59] [cnngru S1local f0] ep  47 train_loss=0.0873 val_loss=0.4085   bad= 8 lr=4.18e-04 1.9s
+[13:34:01] [cnngru S1local f0] ep  48 train_loss=0.0943 val_loss=0.4601   bad= 9 lr=4.16e-04 1.9s
+[13:34:02] [cnngru S1local f0] ep  49 train_loss=0.0798 val_loss=0.3917   bad=10 lr=4.14e-04 1.9s
+[13:34:04] [cnngru S1local f0] ep  50 train_loss=0.0837 val_loss=0.3742 * bad= 0 lr=4.13e-04 1.9s
+[13:34:06] [cnngru S1local f0] ep  51 train_loss=0.0728 val_loss=0.3739 * bad= 0 lr=4.11e-04 1.9s
+[13:34:08] [cnngru S1local f0] ep  52 train_loss=0.0681 val_loss=0.4390   bad= 1 lr=4.10e-04 1.9s
+[13:34:10] [cnngru S1local f0] ep  53 train_loss=0.0657 val_loss=0.4064   bad= 2 lr=4.08e-04 1.9s
+[13:34:12] [cnngru S1local f0] ep  54 train_loss=0.0628 val_loss=0.4497   bad= 3 lr=4.06e-04 1.9s
+[13:34:14] [cnngru S1local f0] ep  55 train_loss=0.0610 val_loss=0.3826   bad= 4 lr=4.05e-04 1.9s
+[13:34:16] [cnngru S1local f0] ep  56 train_loss=0.0653 val_loss=0.4531   bad= 5 lr=4.03e-04 1.9s
+[13:34:18] [cnngru S1local f0] ep  57 train_loss=0.0575 val_loss=0.4264   bad= 6 lr=4.02e-04 1.9s
+[13:34:20] [cnngru S1local f0] ep  58 train_loss=0.0566 val_loss=0.4368   bad= 7 lr=4.00e-04 1.9s
+[13:34:22] [cnngru S1local f0] ep  59 train_loss=0.0601 val_loss=0.4892   bad= 8 lr=3.99e-04 1.9s
+[13:34:24] [cnngru S1local f0] ep  60 train_loss=0.0537 val_loss=0.4448   bad= 9 lr=3.97e-04 1.9s
+[13:34:26] [cnngru S1local f0] ep  61 train_loss=0.0548 val_loss=0.4461   bad=10 lr=3.96e-04 1.9s
+[13:34:28] [cnngru S1local f0] ep  62 train_loss=0.0434 val_loss=0.4674   bad=11 lr=3.94e-04 1.9s
+[13:34:30] [cnngru S1local f0] ep  63 train_loss=0.0454 val_loss=0.5143   bad=12 lr=3.93e-04 1.9s
+[13:34:31] [cnngru S1local f0] ep  64 train_loss=0.0424 val_loss=0.4824   bad=13 lr=3.91e-04 1.9s
+[13:34:33] [cnngru S1local f0] ep  65 train_loss=0.0427 val_loss=0.4745   bad=14 lr=3.90e-04 1.9s
+[13:34:35] [cnngru S1local f0] ep  66 train_loss=0.0489 val_loss=0.4921   bad=15 lr=3.88e-04 1.9s
+[13:34:37] [cnngru S1local f0] ep  67 train_loss=0.0463 val_loss=0.4688   bad=16 lr=3.87e-04 1.9s
+[13:34:39] [cnngru S1local f0] ep  68 train_loss=0.0443 val_loss=0.5245   bad=17 lr=3.85e-04 1.9s
+[13:34:41] [cnngru S1local f0] ep  69 train_loss=0.0405 val_loss=0.4833   bad=18 lr=3.84e-04 1.9s
+[13:34:43] [cnngru S1local f0] ep  70 train_loss=0.0312 val_loss=0.5051   bad=19 lr=3.82e-04 1.9s
+[13:34:45] [cnngru S1local f0] ep  71 train_loss=0.0380 val_loss=0.5553   bad=20 lr=3.81e-04 1.9s
+[13:34:47] [cnngru S1local f0] ep  72 train_loss=0.0383 val_loss=0.4858   bad=21 lr=3.79e-04 1.9s
+[13:34:49] [cnngru S1local f0] ep  73 train_loss=0.0313 val_loss=0.6686   bad=22 lr=3.78e-04 1.9s
+[13:34:51] [cnngru S1local f0] ep  74 train_loss=0.0380 val_loss=0.4544   bad=23 lr=3.76e-04 1.9s
+[13:34:53] [cnngru S1local f0] ep  75 train_loss=0.0422 val_loss=0.5162   bad=24 lr=3.75e-04 1.9s
+[13:34:55] [cnngru S1local f0] ep  76 train_loss=0.0380 val_loss=0.5048   bad=25 lr=3.74e-04 1.9s
+[13:34:55] [cnngru S1local f0] early stop at epoch 76 (best 51, val_loss 0.3739)
+[13:34:55] [cnngru S1local f0] DONE epochs_run=76 best_epoch=51 best_val_loss=0.3739 wall=147s | TEST n=3300 acc=0.8427 macroF1=0.8088
+[13:34:55] all done

@@ -1,11 +1,14 @@
-# Dataset: Privacy-Preserving, Low-Cost mmWave Anomaly Detection for Computer-Integrated Manual Assembly
+# mmWave Assembly Anomaly Detection Dataset
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20323005-blue)](https://doi.org/10.5281/zenodo.20323005)
 
-**Paper:** "Privacy-Preserving, Low-Cost mmWave Anomaly Detection for Computer-Integrated Manual Assembly with Deep Temporal Models"  
+**Paper:** "Detecting sequence and timing errors in manual assembly with a low-cost mmWave radar" (submitted)  
 **Authors:** Baran Kaynak, Sümeyye Kaynak, Andrew Kusiak  
-**Journal:** International Journal of Computer Integrated Manufacturing (submitted 2026)  
-**Funding:** TUBITAK 2219 Research Program, Project No. 1059B1923025
+**Funding:** TÜBİTAK 2219 International Postdoctoral Research Fellowship Programme, grant number 1059B192302529
+
+Version 2.0.0 adds the `analysis/` folder: the analysis code, fold files, out-of-fold predictions and dated analysis plans of the paper above. See `analysis/README.md`. The data files are unchanged since version 1.0.0. Version 2.0.0 also corrects two statements of version 1.0.0; see [Corrections in version 2.0.0](#corrections-in-version-200).
+
+The folders `models/`, `notebooks/`, `scripts/` and `results/` belong to the initial CNN-GRU pipeline of version 1.0.0. They are kept unchanged.
 
 ---
 
@@ -13,6 +16,7 @@
 
 ```
 dataset/
+├── analysis/                             <- Version 2.0.0: analysis code and outputs of the paper (see analysis/README.md)
 ├── sensor_config/
 │   └── iwr6843isk_radar_profile.cfg      <- TI mmWave Studio radar config (all sessions)
 ├── data/
@@ -48,7 +52,7 @@ dataset/
 
 All data was collected on **2025-05-15** using:
 - **mmWave radar:** Texas Instruments IWR6843ISK (60 GHz, on-chip point-cloud output, no DCA1000EVM)
-- **Distance sensors:** VL53L0X-V2 Time-of-Flight sensors (×3, training-time labelling oracle only)
+- **Distance sensors:** VL53L0X-V2 Time-of-Flight sensors (×5, one per box; training-time labelling oracle only)
 - **Task:** Repetitive manual assembly — operator picks boxes from 5 labelled stations in a defined sequence
 
 | Session folder | Scenario | Role |
@@ -98,21 +102,25 @@ pandas, numpy, scikit-learn, matplotlib
 
 ---
 
-## Key Results (from paper)
+## Corrections in version 2.0.0
 
-| Metric | Value |
-|---|---|
-| CNN-GRU state classification accuracy | 93.66% (6 classes) |
-| Sequence anomaly detection (Seq 145) | 75.14% |
-| Pacing anomaly detection (Slow) | 86.44% (either-channel) |
-| Inference latency (CPU, Ryzen 7 5800X) | 12.6 ms/frame median |
-| Inference latency (GPU, RTX 3090) | 0.51 ms/frame median |
+1. **Number of ToF sensors.** The set-up has five VL53L0X time-of-flight sensors, one in each box (Box 1 to Box 5). Version 1.0.0 said "×3". `distance_sensors.csv` holds five distance columns. The scenario sessions (`session_02` to `session_06`) use three of the five boxes (1-2-5, 1-3-5 or 1-4-5); `session_01_training` uses all five.
+2. **Superseded headline accuracy.** Version 1.0.0 gave 93.66% accuracy for the CNN-GRU state estimator. It was measured on a random 80/20 split of overlapping 5-frame windows. Neighbouring windows share four of five frames, so the figure is inflated by leakage and is superseded. Under cycle-grouped folds the CNN-GRU reached 86.9% frame accuracy. Version 1.0.0 also listed anomaly-detection and latency results of the initial pipeline; the paper above replaces them.
+
+Further notes on the data:
+
+- The radar runs at 10 Hz (100 ms per frame), so a 5-frame window covers 0.5 s. The ToF sensors are read at about 30 Hz.
+- The point cloud is two-dimensional (azimuth only, `channelCfg 15 5 0`). The `z` column is 0 in every session.
+- `mmwave_data.csv` contains points with velocity 0; `merged_df.csv` omits them.
+- `loop_id` restarts at 0 in every session; use (`session`, `loop_id`) as the cycle key. There are 320 loop ids, of which 314 are complete assembly cycles.
+- The normal session `session_02_normal_seq125` was not cleaned of natural operator slips; a small number of its cycles deviate from 1-2-5.
+- About 14.7% of radar periods have no row in `mmwave_data.csv`, consistent with frames without points not being logged. Durations computed as frame count × 0.1 s are therefore shorter than wall-clock time.
 
 ---
 
 ## License
 
-The dataset is released under **CC BY 4.0**. The code is released under **MIT License**.
+The dataset is released under **CC BY 4.0**. The code, including `analysis/`, is released under the **MIT License** (`analysis/LICENSE`).
 
 ---
 
@@ -132,9 +140,8 @@ If you use this dataset or code, please cite the paper **and** the dataset recor
 ```bibtex
 @article{kaynak2026mmwave,
   author  = {Kaynak, Baran and Kaynak, S\"{u}meyye and Kusiak, Andrew},
-  title   = {Privacy-Preserving, Low-Cost {mmWave} Anomaly Detection for
-             Computer-Integrated Manual Assembly with Deep Temporal Models},
-  journal = {International Journal of Computer Integrated Manufacturing},
+  title   = {Detecting sequence and timing errors in manual assembly with a
+             low-cost {mmWave} radar},
   year    = {2026},
   note    = {submitted}
 }
@@ -148,7 +155,7 @@ If you use this dataset or code, please cite the paper **and** the dataset recor
   title     = {{mmWave} Assembly Anomaly Detection Dataset},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {1.0.0},
+  version   = {2.0.0},
   doi       = {10.5281/zenodo.20323005},
   url       = {https://doi.org/10.5281/zenodo.20323005}
 }
@@ -156,4 +163,4 @@ If you use this dataset or code, please cite the paper **and** the dataset recor
 
 ### Plain-text (APA)
 
-Kaynak, B., Kaynak, S., & Kusiak, A. (2026). *mmWave Assembly Anomaly Detection Dataset* (v1.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.20323005
+Kaynak, B., Kaynak, S., & Kusiak, A. (2026). *mmWave Assembly Anomaly Detection Dataset* (v2.0.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.20323005

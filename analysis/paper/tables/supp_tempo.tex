@@ -1,0 +1,23 @@
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+ & & & \multicolumn{3}{c}{D3 alarms at $\alpha=0.10$ raised by} & & \\
+\cmidrule(lr){4-6}
+Cell & Type & D3 detection (\%) & D1 only & D2 only & Both & D2 alone, $\alpha=0.10$ (\%) & D2 alone, FAR (\%) \\
+\midrule
+B2 states, predicted cycles & fast & 92.1 (221/240) & 36 & 169 & 16 & 80.0 [68.8--90.0] & 7.8 [3.1--18.5] \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (b2 x pred, fast)
+ & slow & 92.9 (237/255) & 0 & 237 & 0 & 99.2 [98.0--100.0] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (b2 x pred, slow)
+ & fast + slow & 92.5 (458/495) & 36 & 406 & 16 & 89.9 [84.0--94.7] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (b2 x pred, tempo)
+\midrule
+ToF labels, ToF cycles (oracle) & fast & 93.1 (228/245) & 163 & 18 & 47 & 32.2 [20.8--44.5] & 9.8 [4.3--21.0] \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (tof x tof, fast)
+ & slow & 60.0 (156/260) & 0 & 156 & 0 & 88.1 [84.2--91.5] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (tof x tof, slow)
+ & fast + slow & 76.0 (384/505) & 163 & 174 & 47 & 61.0 [52.9--69.1] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (tof x tof, tempo)
+\midrule
+ToF labels, predicted cycles & fast & 93.0 (214/230) & 144 & 14 & 56 & 36.5 [23.0--50.4] & 8.0 [3.2--18.8] \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (tof x pred, fast)
+ & slow & 88.2 (225/255) & 0 & 225 & 0 & 98.8 [97.3--100.0] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (tof x pred, slow)
+ & fast + slow & 90.5 (439/485) & 144 & 239 & 56 & 69.3 [60.0--78.1] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (tof x pred, tempo)
+\midrule
+B2 states, ToF cycles & fast & 78.8 (193/245) & 28 & 154 & 11 & 69.8 [60.0--78.4] & 3.9 [1.1--13.2] \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (b2 x tof, fast)
+ & slow & 82.7 (215/260) & 0 & 215 & 0 & 87.7 [80.0--94.2] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (b2 x tof, slow)
+ & fast + slow & 80.8 (408/505) & 28 & 369 & 11 & 79.0 [72.9--85.0] &  \\ % [S] faz_a4/02_tempo_channel_split.csv, 02_tempo_secondary_D2alone.csv (b2 x tof, tempo)
+\bottomrule
+\end{tabular}

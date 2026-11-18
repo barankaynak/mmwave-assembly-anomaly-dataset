@@ -1,0 +1,39 @@
+{
+ "a": {
+  "literal": "a_tau20",
+  "point_only": "a_tau25",
+  "order": [
+   "a_tau25",
+   "a_tau22.5",
+   "a_tau20",
+   "a_tau17.5",
+   "base"
+  ]
+ },
+ "b": {
+  "literal": "base",
+  "point_only": "b_sign",
+  "order": [
+   "b_removed",
+   "b_sign",
+   "base"
+  ]
+ },
+ "c": {
+  "literal": "base",
+  "point_only": "base",
+  "order": [
+   "c_static",
+   "base",
+   "c_raw"
+  ]
+ },
+ "d": {
+  "literal": "d_group",
+  "point_only": "d_group",
+  "order": [
+   "d_group",
+   "base"
+  ]
+ }
+}

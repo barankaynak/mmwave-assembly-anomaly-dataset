@@ -29,3 +29,6 @@ desktop.ini
 *.log
 
 # Do NOT ignore data files (.csv, .keras, .cfg, .json) — they are the dataset
+
+# analysis/ ships its run logs (cited in the analysis plans)
+!analysis/**/*.log

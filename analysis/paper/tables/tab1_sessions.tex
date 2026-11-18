@@ -1,0 +1,14 @@
+\begin{tabular}{@{}llllrrrl@{}}
+\toprule
+Session & Scenario & Box sequence & Pace & Frames & Cycles & Median cycle (s) & Role in the evaluation \\
+\midrule
+s01 & Training & randomised{,} variable & -- & 4{,}683 & 56 & 5.60 & state estimation only (not used for anomaly detection) \\ % [D] probe/00_schema.md (frames{,} loops-1{,} loop duration median); CLAUDE.md 2.1
+s02 & Normal & 1--2--5 & normal & 2{,}274 & 51 & 5.00 & normal: train / calibrate / test \\ % [D] probe/00_schema.md (frames{,} loops-1{,} loop duration median); CLAUDE.md 2.1
+s03 & Sequence 1--3--5 & 1--3--5 & normal & 2{,}407 & 57 & 4.60 & anomaly test \\ % [D] probe/00_schema.md (frames{,} loops-1{,} loop duration median); CLAUDE.md 2.1
+s04 & Sequence 1--4--5 & 1--4--5 & normal & 1{,}928 & 49 & 4.50 & anomaly test \\ % [D] probe/00_schema.md (frames{,} loops-1{,} loop duration median); CLAUDE.md 2.1
+s05 & Fast & 1--2--5 & fast & 1{,}780 & 49 & 3.80 & anomaly test \\ % [D] probe/00_schema.md (frames{,} loops-1{,} loop duration median); CLAUDE.md 2.1
+s06 & Slow & 1--2--5 & slow & 3{,}200 & 52 & 8.30 & anomaly test \\ % [D] probe/00_schema.md (frames{,} loops-1{,} loop duration median); CLAUDE.md 2.1
+\midrule
+Total & & & & 16{,}272 & 314 & & \\ % [D] probe/00_schema.md (frames 16272; 320 loops minus 6 loop-0 fragments = 314)
+\bottomrule
+\end{tabular}

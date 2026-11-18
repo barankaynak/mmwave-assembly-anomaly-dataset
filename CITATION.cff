@@ -2,13 +2,14 @@ cff-version: 1.2.0
 message: "If you use this dataset or code, please cite it using the metadata below."
 title: "mmWave Assembly Anomaly Detection Dataset"
 abstract: >
-  Dataset and code supporting the paper "Privacy-Preserving, Low-Cost mmWave
-  Anomaly Detection for Computer-Integrated Manual Assembly with Deep Temporal
-  Models". Contains raw mmWave radar point-cloud recordings (TI IWR6843ISK,
-  no DCA1000EVM), Time-of-Flight distance measurements, synchronized and
-  labelled merged data, trained CNN-GRU model weights, and analysis notebooks
-  for six experimental sessions covering normal assembly, sequence anomalies,
-  and pacing anomalies.
+  Dataset and code supporting the paper "Detecting sequence and timing errors
+  in manual assembly with a low-cost mmWave radar". Contains raw mmWave radar
+  point-cloud recordings (TI IWR6843ISK, no DCA1000EVM), time-of-flight
+  distance measurements, synchronized and labelled merged data for six
+  sessions covering normal assembly, sequence deviations and pace deviations,
+  the initial CNN-GRU pipeline (model weights and notebooks) and, from
+  version 2.0.0, the analysis code, fold files, out-of-fold predictions and
+  dated analysis plans of the paper (analysis/).
 authors:
   - family-names: Kaynak
     given-names: Baran
@@ -30,8 +31,8 @@ authors:
     affiliation: >
       Department of Industrial and Systems Engineering, The University of Iowa, USA
     email: andrew-kusiak@uiowa.edu
-version: "1.0.0"
-date-released: "2026-05-21"
+version: "2.0.0"
+date-released: "2026-11-18"
 license: CC-BY-4.0
 repository-code: "https://github.com/barankaynak/mmwave-assembly-anomaly-dataset"
 doi: "10.5281/zenodo.20323005"
@@ -40,13 +41,10 @@ keywords:
   - mmWave radar
   - manual assembly monitoring
   - anomaly detection
-  - computer-integrated manufacturing
-  - deep learning
-  - CNN-GRU
-  - Temporal Fusion Transformer
   - point cloud
-  - Industry 4.0
-  - privacy-preserving sensing
+  - conformal prediction
+  - data leakage
+  - low-cost sensing
 references:
   - type: article
     authors:
@@ -57,8 +55,7 @@ references:
       - family-names: Kusiak
         given-names: Andrew
     title: >
-      Privacy-Preserving, Low-Cost mmWave Anomaly Detection for
-      Computer-Integrated Manual Assembly with Deep Temporal Models
-    journal: International Journal of Computer Integrated Manufacturing
+      Detecting sequence and timing errors in manual assembly with a
+      low-cost mmWave radar
     year: 2026
     status: submitted

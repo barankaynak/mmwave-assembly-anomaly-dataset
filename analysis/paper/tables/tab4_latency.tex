@@ -1,0 +1,13 @@
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Component & Size & Median (ms) & IQR (ms) & 95th percentile (ms) \\
+\midrule
+B1 nearest centroid & 5 centroids & 0.01 & 0.00 & 0.01 \\ % [S] faz_a2/05_latency.md (mean of 3 runs of per-run medians; Ryzen 7 3700X, 1 thread)
+B2 (features + random forest) & 300 trees, 21 features & 20.0 & 1.1 & 24.1 \\ % [S] faz_a2/05_latency.md (mean of 3 runs of per-run medians; Ryzen 7 3700X, 1 thread)
+\quad of which: 21 features from frame statistics & -- & 0.54 & 0.03 & 0.74 \\ % [S] faz_a2/05_latency.md (mean of 3 runs of per-run medians; Ryzen 7 3700X, 1 thread)
+CNN--GRU, full 5-frame window & 1{,}921{,}446 parameters & 7.2 & 0.79 & 9.4 \\ % [S] faz_a2/05_latency.md (mean of 3 runs of per-run medians; Ryzen 7 3700X, 1 thread)
+CNN--GRU, streaming (descriptive) & 1{,}921{,}446 parameters & 2.8 & 0.29 & 3.4 \\ % [S] faz_a2/05_latency.md (mean of 3 runs of per-run medians; Ryzen 7 3700X, 1 thread)
+Heatmap construction, per frame & -- & 0.04 & 0.00 & 0.05 \\ % [S] faz_a2/05_latency.md (mean of 3 runs of per-run medians; Ryzen 7 3700X, 1 thread)
+Frame statistics from points, per frame (approximate) & -- & 0.05 & 0.00 & 0.06 \\ % [S] faz_a2/05_latency.md (mean of 3 runs of per-run medians; Ryzen 7 3700X, 1 thread)
+\bottomrule
+\end{tabular}

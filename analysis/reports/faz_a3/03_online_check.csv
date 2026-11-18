@@ -1,0 +1,11 @@
+cell,f,n_test,n_online,n_faza,n_diff,keys_equal
+b2xpred,0,214,101,101,0,True
+b2xpred,1,212,196,196,0,True
+b2xpred,2,213,92,92,0,True
+b2xpred,3,213,151,151,0,True
+b2xpred,4,214,107,107,0,True
+tofxtof,0,218,206,206,0,True
+tofxtof,1,217,204,204,0,True
+tofxtof,2,217,151,151,0,True
+tofxtof,3,217,151,151,0,True
+tofxtof,4,217,206,206,0,True

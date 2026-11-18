@@ -1,0 +1,12 @@
+\begin{tabular}{@{}lcccccccc@{}}
+\toprule
+ & \multicolumn{2}{c}{Normal cycles} & \multicolumn{5}{c}{Detection rate (\%)} & AUROC \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-8}\cmidrule(lr){9-9}
+State estimator trained on & Alarms & FAR (\%) [95\% CI] & 1--3--5 & 1--4--5 & Fast & Slow & All & All \\
+\midrule
+Pooled S1 (primary; all six sessions in training) & 4/51 & 7.8 [3.1--18.5] & 25.4 & 47.5 & 92.1 & 92.9 & 63.3 & 0.924 $\pm$ 0.035 \\ % [S] faz_a4/04_unseen_anomaly_table.csv, 04_unseen_far.csv (FazA_S1, pred, D3, alpha 0.10)
+(i) Leave one session out (other anomaly sessions seen) & 6/51 & 11.8 [5.5--23.4] & 60.7 & 60.0 & 64.6 & 55.2 & 60.1 & 0.928 $\pm$ 0.051 \\ % [S] faz_a4/04_unseen_anomaly_table.csv, 04_unseen_far.csv (i_S2, pred, D3, alpha 0.10)
+(ii) s01 + s02 only (no anomaly session in training) & 3/50 & 6.0 [2.1--16.2] & 26.4 & 48.0 & 92.9 & 97.3 & 65.3 & 0.938 $\pm$ 0.053 \\ % [S] faz_a4/04_unseen_anomaly_table.csv, 04_unseen_far.csv (ii_s01s02, pred, D3, alpha 0.10)
+(ii) s01 + s02 only, with E1 in place of D1 (one planned run) & 3/50 & 6.0 [2.1--16.2] & 100.0 & 100.0 & 95.4 & 97.3 & 98.2 & -- \\ % [S] reports/faz_g/01_e1_ii_summary.csv (plan faz_g/DESIGN_G.md)
+\bottomrule
+\end{tabular}

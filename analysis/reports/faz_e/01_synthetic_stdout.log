@@ -1,0 +1,314 @@
+
+====================================================================================================
+0. Inputs (s01 / s02 only) and Phase A reproduction gate
+====================================================================================================
+OOF rows kept: 6949 ({'session_01_training': 4679, 'session_02_normal_seq125': 2270}); sessions in memory: ['session_01_training', 'session_02_normal_seq125']
+folds_anom rows kept: 109 ({'session_01_training': 57, 'session_02_normal_seq125': 52}); 04_cycle_scores rows kept: 255 (b2 x pred x s02 x normal)
+  session_01_training: 4679 window rows, frame_id 4..4682 contiguous (first 4 frames have no window)
+  session_02_normal_seq125: 2270 window rows, frame_id 4..2273 contiguous (first 4 frames have no window)
+s02 B2 x pred cycles rebuilt: 51; counts: {'state_source': 'b2', 'segmentation': 'pred', 'session': 'session_02_normal_seq125', 'atype': 'normal', 'n_tof_ref': 51, 'n_pred_box1_entries': 52, 'n_used': 51, 'n_dropped_unmapped_loop': 0, 'n_dropped_open_last': 1, 'n_loops_with_0': 10, 'n_loops_with_1': 31, 'n_loops_with_2plus': 10}
+Phase A n_cal per fold: {0: 19, 1: 20, 2: 21, 3: 22, 4: 20}  n_train: {0: 21, 1: 22, 2: 20, 3: 19, 4: 20}
+reproduction gate: {'n_rebuilt': 255, 'n_ref': 255, 'n_matched': 255, 'mismatch_start_frame_id': 0, 'mismatch_end_frame_id': 0, 'mismatch_visit_seq': 0, 'mismatch_atype': 0, 'maxdiff_D0': 4.440892098500626e-16, 'nan_pattern_ok_D0': True, 'maxdiff_D1': 4.440892098500626e-16, 'nan_pattern_ok_D1': True, 'maxdiff_D2': 4.440892098500626e-16, 'nan_pattern_ok_D2': True, 'maxdiff_d2_nref': 0.0, 'nan_pattern_ok_d2_nref': True, 'maxdiff_dur_s': 8.881784197001252e-16, 'nan_pattern_ok_dur_s': True, 'maxdiff_p0': 1.1102230246251565e-16, 'nan_pattern_ok_p0': True, 'maxdiff_p1': 5.551115123125783e-17, 'nan_pattern_ok_p1': True, 'maxdiff_p2': 1.1102230246251565e-16, 'nan_pattern_ok_p2': True, 'maxdiff_p3': 1.1102230246251565e-16, 'nan_pattern_ok_p3': True}
+GATE PASSED: 255 (cycle, f, role) rows reproduce Phase A D0/D1/D2/p0..p3 (max |diff| 8.88e-16)
+E1 visits == Phase A visits for all 51 cycles; isolated re-debounce == session-wide debounce for all 51 cycles
+
+====================================================================================================
+1. Normal side: route, mu, calibration, S_E, p_E, D3' (51 s02 normal cycles, Phase A roles)
+====================================================================================================
+ f route     mu_1     mu_2     mu_5  n_train  n_cal  n_test  cal_max  n_cal_pos  cal_max_plain        train_readings
+ 0 1-2-5 8.372698 8.046190 5.639841       21     19      11     1.09          1           1.09             1-2-5 x21
+ 1 1-2-5 8.303636 8.524242 5.553939       22     20       9     0.00          0           0.00             1-2-5 x22
+ 2 1-2-5 7.996333 8.253500 5.484500       20     21      10     0.00          0           0.00 1-2-5 x19, 1-3-2-5 x1
+ 3 1-2-5 8.031579 7.858421 5.740351       19     22      10     0.00          0           0.00 1-2-5 x18, 1-3-2-5 x1
+ 4 1-2-5 8.563333 8.145167 5.571333       20     20      11     1.09          1           1.09             1-2-5 x20
+
+51 normal test S_E: 50 x exactly 0; positive: cycle 19 (f1, 1-3-2-5) S_E = 1.0900
+FAR p_E <= 0.10: 1/51 = 0.020  cycles [19]
+FAR p_E <= 0.05: 1/51 = 0.020  cycles [19]
+FAR D3'  <= 0.10: 4/51 = 0.078  cycles [0, 4, 19, 48]
+FAR Phase A D3 (loaded table) <= 0.10: 4/51 = 0.078  cycles [0, 4, 19, 48]
+binomial SE at alpha 0.10, n = 51: 0.042; 2SE band [0.016, 0.184]
+D3' alarm set == Phase A D3 alarm set: True
+ cycle_idx  f reading reading_c  S_E      p_E       p1       p2       p3      D3p                                                                   explain path
+         0  3   1-2-5     1-2-5 0.00 1.000000 1.000000 0.043478 0.086957 0.086957                             S_E = 0.00: reading 1-2-5 follows route 1-2-5  p_2
+         4  2   1-2-5     1-2-5 0.00 1.000000 1.000000 0.045455 0.090909 0.090909                             S_E = 0.00: reading 1-2-5 follows route 1-2-5  p_2
+        19  1 1-3-2-5   1-3-2-5 1.09 0.047619 0.047619 0.428571 0.095238 0.095238 S_E = 1.09: extra visit Box 3 frames 859-860 (mass 1.09); reading 1-3-2-5  p_E
+        48  4 1-2-2-5     1-2-5 0.00 1.000000 0.095238 0.047619 0.095238 0.095238                             S_E = 0.00: reading 1-2-5 follows route 1-2-5  p_2
+
+====================================================================================================
+2. Synthetic battery: material
+====================================================================================================
+parents (test-role s02 normal cycles with collapsed reading 1-2-5): 50 of 51; per fold {0: 11, 1: 8, 2: 10, 3: 10, 4: 11}; uncollapsed readings {'1-2-5': 47, '1-2-2-5': 3}
+Box-2 block length (frames) over parents: {4: 1, 5: 3, 6: 14, 7: 10, 8: 4, 9: 5, 10: 4, 11: 2, 12: 3, 13: 1, 15: 1, 19: 1, 20: 1}
+Box-5 block length (frames) over parents: {4: 1, 5: 23, 6: 21, 7: 3, 8: 1, 9: 1}
+2->5 transit length (frames): {9: 3, 10: 6, 11: 5, 12: 10, 13: 12, 14: 7, 15: 6, 16: 1}
+1->2 transit length (frames): {4: 9, 5: 23, 6: 9, 7: 6, 8: 2, 9: 1}
+frame intervals > 0.15 s inside parent cycles (frames without radar points are absent from the frame table): {'n_intervals_gt_0p15s': 103, 'n_parents_with_one': 50, 'interval_min_med_max': (0.197, 0.3, 1.199), 'where': {'transit': 102, 'Box-1 block': 1}}
+largest: {'cycle_idx': 44, 'f': 1, 'frame_in_cycle': 21, 'frame_id': 1981, 'interval_s': 1.1991579999999828, 'where': 'transit'}
+flicker block: {'cycle_idx': 19, 'frame_ids': (859, 860), 'raw': [3, 3], 'p3': [0.7033, 0.3867], 'mass': 1.08999996}
+s01 ToF-true runs inside single complete loops, per box: {1: 40, 2: 46, 3: 43, 4: 30, 5: 101}
+  Box 3: 43 runs; length min/median/max 4/6.0/16 frames; B2 mass at Box 3 min/median/max 0.33/3.32/13.97; block alone debounces to a Box-3 visit: 28/43
+  Box 4: 30 runs; length min/median/max 4/7.0/14 frames; B2 mass at Box 4 min/median/max 0.03/5.48/12.10; block alone debounces to a Box-4 visit: 29/30
+
+Details the plan leaves open (fixed here, before scoring):
+  - Blocks = frames [first, last+1) of the parent's collapsed visit (session-wide debounced labels; == isolated re-debounce for all 51 cycles); a composite carries the parent's RAW B2 labels and posteriors and is debounced again as a whole.
+  - Time axis of every non-tempo composite = spliced real frame intervals (each frame keeps t[k+1]-t[k] of its source: s02 parent, s01 run or the s02 flicker frames; inserted none frames 0.1 s). The unmodified parent therefore reproduces Phase A D2 exactly; dropped-frame holes travel with their block.
+  - Insertion points = floor midpoints: foreign at e2 + (s5-e2)//2 (2->5 transit); reach flicker at e1 + (s2-e1)//2 (1->2 transit); mid-dwell flicker and split gaps at s2 + (e2-s2)//2.
+  - swap_1-5-2 = pre + B5 + (2->5 transit) + B2 + post. repeat_2_far = B2 copy inserted right after the last frame of the Box-5 block. repeat_2_immediate = B2 + (copy of the parent's own 2->5 transit) + B2 copy + (2->5 transit) + B5.
+  - subst_b = s01 run replaces B2; foreign_b = s01 run inserted in the 2->5 transit; full cross products (50 x 43 Box-3 runs, 50 x 30 Box-4 runs), no RNG. 'Readable' = the debounced composite has a visit of the pasted box.
+  - truncation keepK = the first K frames of the Box-5 block are kept, the rest of the block is deleted (K = 0, 1, 2, 3).
+  - tempo xs: n' = round(T*s/0.1) frames on a 0.1 s grid (T = parent duration); frame k takes the parent frame whose real start time is nearest to 0.1*k/s (ties -> earlier frame); labels and posteriors copied, then debounced.
+  - mid-dwell flicker parents: Box-2 block >= 6 frames (each half keeps >= 3 frames = MIN_BOX + 1); shorter parents are run as a supplementary row outside the acceptance.
+  - split_visit gapG: G none frames (posterior one-hot none, 0.1 s each) inserted at the middle of the Box-2 block.
+  - Every synthetic cycle: parent fold f, route/mu and Phase A parameters fitted on the real training normals (f+3, f+4), calibrated on the real calibration normals (f+1, f+2), conformal ties conservative (a2_cycles.conf_p).
+
+====================================================================================================
+2a. Identity check (51 normal cycles rebuilt unmodified as composites)
+====================================================================================================
+max |diff| composite vs real: {'d_S_E': 0.0, 'd_D1': 0.0, 'd_D2': 0.0, 'd_p_E': 0.0, 'd_p1': 0.0, 'd_p2': 0.0, 'readings_same': 51, 'D3p_flips': 0}
+
+====================================================================================================
+2b. Synthetic battery: scoring
+====================================================================================================
+synthetic cycles scored: 8250  ({'omission_2': 50, 'swap_1-5-2': 50, 'repeat_2_far': 50, 'repeat_2_immediate': 50, 'subst_3': 2150, 'foreign_3': 2150, 'subst_4': 1500, 'foreign_4': 1500, 'truncation': 200, 'tempo': 300, 'flicker_reach': 50, 'flicker_mid_dwell': 46, 'split_visit': 150, 'flicker_mid_dwell_short': 4})
+
+====================================================================================================
+2c. Battery summary (detection = share of synthetic cycles alarmed; D3' alarm <= 0.10; p_E / p_1 / p_2 at the stated level)
+====================================================================================================
+                   kind  variant    n  S_E_min  S_E_med  S_E_max  plain_min  plain_med  plain_max  det_D3p  det_pE10  det_pE05  det_D3_phaseA  det_D1_05  det_p2_05  det_D3p_plain
+             omission_2            50    7.858    8.145    8.524      7.858      8.145      8.524    1.000     1.000     1.000          0.380      0.360      0.020          1.000
+             swap_1-5-2            50    9.301   10.329   12.995      9.301     10.329     12.995    1.000     1.000     1.000          0.820      0.800      0.040          1.000
+           repeat_2_far            50    3.063    5.822   10.150      3.063      5.822     17.300    1.000     1.000     1.000          0.820      0.800      0.060          1.000
+     repeat_2_immediate            50    0.000    0.000    0.000      0.000      0.000      0.000    0.060     0.000     0.000          0.060      0.000      0.060          0.060
+                subst_3 all runs 2150    0.000   11.328   22.525      0.000     11.328     22.525    0.669     0.653     0.653          0.148      0.119      0.035          0.669
+                subst_4 all runs 1500    9.808   13.643   20.628      9.808     13.643     20.628    1.000     1.000     1.000          0.373      0.353      0.020          1.000
+              foreign_3 all runs 2150    0.000    3.320   13.723      0.000      3.320     13.723    0.983     0.651     0.641          0.876      0.521      0.386          0.983
+              foreign_4 all runs 1500    1.950    5.475   12.103      1.950      5.475     12.103    1.000     1.000     1.000          0.820      0.800      0.060          1.000
+             truncation    keep0   50    5.485    5.571    5.740      5.485      5.571      5.740    1.000     1.000     1.000          0.800      0.800      0.040          1.000
+             truncation    keep1   50    5.485    5.571    5.740      5.485      5.571      5.740    1.000     1.000     1.000          0.800      0.800      0.040          1.000
+             truncation    keep2   50    0.000    0.000    0.000      0.000      0.000      0.000    1.000     0.000     0.000          1.000      0.000      1.000          1.000
+             truncation    keep3   50    0.000    0.000    0.000      0.000      0.000      0.000    1.000     0.000     0.000          1.000      0.000      1.000          1.000
+                  tempo    x0.60   50    0.000    0.000    0.000      0.000      0.000      0.000    0.920     0.000     0.000          0.920      0.000      0.920          0.920
+                  tempo    x0.70   50    0.000    0.000    0.000      0.000      0.000      0.000    0.580     0.000     0.000          0.580      0.000      0.580          0.580
+                  tempo    x0.80   50    0.000    0.000    0.000      0.000      0.000      0.000    0.120     0.000     0.000          0.120      0.000      0.120          0.120
+                  tempo    x1.25   50    0.000    0.000    1.407      0.000      0.000      2.730    0.240     0.040     0.020          0.240      0.020      0.220          0.240
+                  tempo    x1.40   50    0.000    0.000    1.407      0.000      0.000      2.730    0.520     0.020     0.020          0.500      0.000      0.500          0.520
+                  tempo    x1.70   50    0.000    0.000    1.407      0.000      0.000      3.470    0.960     0.060     0.040          0.960      0.020      0.960          0.960
+          flicker_reach            50    1.090    1.090    1.090      1.090      1.090      1.090    0.580     1.000     0.560          0.200      0.160      0.040          0.580
+      flicker_mid_dwell            46    1.090    1.090    1.793      2.670      3.755      9.637    0.609     1.000     0.587          0.804      0.783      0.065          1.000
+flicker_mid_dwell_short             4    1.090    1.090    1.090      2.380      2.920      2.987    0.250     1.000     0.250          1.000      1.000      0.000          1.000
+            split_visit     gap2   50    0.000    0.000    0.000      0.000      0.000      0.000    0.060     0.000     0.000          0.060      0.000      0.060          0.060
+            split_visit     gap3   50    0.000    0.000    0.000      0.000      0.000      0.000    0.060     0.000     0.000          0.060      0.000      0.060          0.060
+            split_visit     gap5   50    0.000    0.000    0.000      0.000      0.000      0.000    0.060     0.000     0.000          0.060      0.000      0.060          0.060
+
+                   kind  variant    n                                         readings
+             omission_2            50                                          1-5 x50
+             swap_1-5-2            50                                        1-5-2 x50
+           repeat_2_far            50                                      1-2-5-2 x50
+     repeat_2_immediate            50                                        1-2-5 x50
+                subst_3 all runs 2150 1-3-5 x1350, 1-2-5 x747, 1-2-3-5 x50, 1-3-2-5 x3
+                subst_4 all runs 1500                           1-4-5 x1450, 1-3-5 x50
+              foreign_3 all runs 2150                        1-2-3-5 x1400, 1-2-5 x750
+              foreign_4 all runs 1500                       1-2-4-5 x1450, 1-2-3-5 x50
+             truncation    keep0   50                                          1-2 x50
+             truncation    keep1   50                                          1-2 x50
+             truncation    keep2   50                                        1-2-5 x50
+             truncation    keep3   50                                        1-2-5 x50
+                  tempo    x0.60   50                                        1-2-5 x50
+                  tempo    x0.70   50                                        1-2-5 x50
+                  tempo    x0.80   50                                        1-2-5 x50
+                  tempo    x1.25   50              1-2-5 x48, 1-2-4-5 x1, 1-2-3-2-5 x1
+                  tempo    x1.40   50                          1-2-5 x49, 1-2-3-2-5 x1
+                  tempo    x1.70   50  1-2-5 x47, 1-2-4-5 x1, 1-3-2-5 x1, 1-2-3-2-5 x1
+          flicker_reach            50                                      1-3-2-5 x50
+      flicker_mid_dwell            46                                    1-2-3-2-5 x46
+flicker_mid_dwell_short             4                                     1-2-3-2-5 x4
+            split_visit     gap2   50                                        1-2-5 x50
+            split_visit     gap3   50                                        1-2-5 x50
+            split_visit     gap5   50                                        1-2-5 x50
+
+====================================================================================================
+2d. Substitution / foreign insertion split by readability (composite has a visit of the pasted box)
+====================================================================================================
+     kind  readable    n  S_E_min  S_E_med  S_E_max  det_D3p  det_pE10  det_pE05  det_D3_phaseA  det_D1_05  det_p2_05  det_D3p_plain                             readings
+  subst_3     1.000 1403    1.117   12.965   22.525    1.000     1.000     1.000          0.202      0.182      0.029          1.000 1-3-5 x1350, 1-2-3-5 x50, 1-3-2-5 x3
+  subst_3     0.000  747    0.000    0.000    0.000    0.047     0.000     0.000          0.047      0.000      0.047          0.047                           1-2-5 x747
+  subst_4     1.000 1450    9.808   13.668   20.628    1.000     1.000     1.000          0.380      0.360      0.020          1.000                          1-4-5 x1450
+  subst_4     0.000   50   10.028   10.315   11.165    1.000     1.000     1.000          0.180      0.160      0.020          1.000                            1-3-5 x50
+foreign_3     1.000 1400    1.063    4.875   13.723    0.985     1.000     0.984          0.820      0.800      0.067          0.985                        1-2-3-5 x1400
+foreign_3     0.000  750    0.000    0.000    0.000    0.980     0.000     0.000          0.980      0.000      0.980          0.980                           1-2-5 x750
+foreign_4     1.000 1450    1.950    5.597   12.103    1.000     1.000     1.000          0.820      0.800      0.060          1.000                        1-2-4-5 x1450
+foreign_4     0.000   50    2.170    2.170    2.170    1.000     1.000     1.000          0.820      0.800      0.060          1.000                          1-2-3-5 x50
+
+subst runs readable in all / no / some parents: {'subst_3': (28, 12, 3), 'subst_4': (29, 1, 0)}
+
+====================================================================================================
+2e. Per-fold detection (D3') and minimum S_E for kinds 1-3, 5, 6; D1 (p_1 <= 0.05) per fold
+====================================================================================================
+        kind  f   n  det_D3p  det_D1_05  S_E_min  S_E_med
+  omission_2  0  11    1.000      0.000    8.046    8.046
+  omission_2  1   8    1.000      1.000    8.524    8.524
+  omission_2  2  10    1.000      0.000    8.254    8.254
+  omission_2  3  10    1.000      1.000    7.858    7.858
+  omission_2  4  11    1.000      0.000    8.145    8.145
+  swap_1-5-2  0  11    1.000      1.000    9.850   10.233
+  swap_1-5-2  1   8    1.000      1.000    9.964   10.726
+  swap_1-5-2  2  10    1.000      0.000    9.755   10.245
+  swap_1-5-2  3  10    1.000      1.000    9.367   10.272
+  swap_1-5-2  4  11    1.000      1.000    9.301   10.751
+repeat_2_far  0  11    1.000      1.000    4.363    5.870
+repeat_2_far  1   8    1.000      1.000    5.223    5.727
+repeat_2_far  2  10    1.000      0.000    3.493    5.890
+repeat_2_far  3  10    1.000      1.000    3.063    6.728
+repeat_2_far  4  11    1.000      1.000    4.320    5.630
+     subst_3  0 473    0.651      0.023    0.000   11.246
+     subst_3  1 344    0.651      0.651    0.000   11.724
+     subst_3  2 430    0.686      0.000    0.000   11.453
+     subst_3  3 430    0.698      0.023    0.000   11.058
+     subst_3  4 473    0.658      0.023    0.000   11.345
+     subst_4  0 330    1.000      0.000    9.996   13.521
+     subst_4  1 240    1.000      1.000   10.474   13.999
+     subst_4  2 300    1.000      0.000   10.203   13.729
+     subst_4  3 300    1.000      0.967    9.808   13.333
+     subst_4  4 330    1.000      0.000   10.095   13.620
+   foreign_3  0 473    0.977      0.651    0.000    3.320
+   foreign_3  1 344    1.000      0.651    0.000    3.320
+   foreign_3  2 430    1.000      0.000    0.000    3.320
+   foreign_3  3 430    0.965      0.651    0.000    3.320
+   foreign_3  4 473    0.979      0.651    0.000    3.320
+   foreign_4  0 330    1.000      1.000    1.950    5.475
+   foreign_4  1 240    1.000      1.000    1.950    5.475
+   foreign_4  2 300    1.000      0.000    1.950    5.475
+   foreign_4  3 300    1.000      1.000    1.950    5.475
+   foreign_4  4 330    1.000      1.000    1.950    5.475
+
+====================================================================================================
+2f. Kind-specific checks
+====================================================================================================
+  omission_reading_1-5: 50
+  omission_S_E_eq_mu2: 50
+  truncation_lacking_box5: 100
+  truncation_lacking_box5_S_E_eq_mu5: 100
+  truncation_lacking_box5_det_D3p: 1.0
+  flicker_reach_S_E_eq_flicker_mass: 50
+  flicker_reach_alarm_D3p_by_fold: {0: 0.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 0.09090909090909091}
+  flicker_reach_alarm_pE05_by_fold: {0: 0.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 0.0}
+  flicker_reach_alarm_pE10_by_fold: {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}
+  flicker_reach_D3p_alarms_via_p2_only: 1
+  mid_dwell_n: 46
+  mid_dwell_readings: {'1-2-3-2-5': 46}
+  mid_dwell_S_E_values: {1.09: 45, 1.7933: 1}
+  mid_dwell_S_E_max: 1.79333326
+  mid_dwell_S_E_eq_offroute_visit_mass: 46/46
+  mid_dwell_offroute_visit_frames: {2: 45, 3: 1}
+  mid_dwell_plain_min_med_max: (2.67000002, 3.75499997, 9.6366667)
+  mid_dwell_alarm_D3p_by_fold: {0: 0.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 0.09090909090909091}
+  mid_dwell_above_1.2: [{'parent': 47, 'f': 2, 'b2_block_raw': '223222', 'b2_block_p3': '0.14 0.22 0.70 0.17 0.11 0.18', 'insert_after_block_frame': 2, 'composite_box3_frames': 3, 'S_E': 1.79333326, 'S_plain': 3.11666656, 'explain': 'S_E = 1.79: extra visit Box 3 frames 14-16 (mass 1.79); reading 1-2-3-2-5'}]
+  repeat_immediate_transit_lt2: 0
+  repeat_immediate_S_E_zero: 50
+  split_visit_S_E_zero: 150/150
+
+truncation by kept frames and whether the reading lacks Box 5:
+variant  lacks5  n  S_E_min  S_E_med  S_E_max  det_D3p  det_pE10  det_pE05  det_D3_phaseA  det_D1_05  det_p2_05  det_D3p_plain  readings
+  keep0    True 50    5.485    5.571    5.740    1.000     1.000     1.000          0.800      0.800      0.040          1.000   1-2 x50
+  keep1    True 50    5.485    5.571    5.740    1.000     1.000     1.000          0.800      0.800      0.040          1.000   1-2 x50
+  keep2   False 50    0.000    0.000    0.000    1.000     0.000     0.000          1.000      0.000      1.000          1.000 1-2-5 x50
+  keep3   False 50    0.000    0.000    0.000    1.000     0.000     0.000          1.000      0.000      1.000          1.000 1-2-5 x50
+
+tempo scaling (D1/D2 recomputed on the scaled, re-debounced cycles):
+variant  n  S_E_med  S_E_max  seq_ch_pE05  det_D3p  det_D3_phaseA  det_D2_p2_05  det_D1_05                                        readings
+  x0.60 50    0.000    0.000        0.000    0.920          0.920         0.920      0.000                                       1-2-5 x50
+  x0.70 50    0.000    0.000        0.000    0.580          0.580         0.580      0.000                                       1-2-5 x50
+  x0.80 50    0.000    0.000        0.000    0.120          0.120         0.120      0.000                                       1-2-5 x50
+  x1.25 50    0.000    1.407        0.020    0.240          0.240         0.220      0.020             1-2-5 x48, 1-2-4-5 x1, 1-2-3-2-5 x1
+  x1.40 50    0.000    1.407        0.020    0.520          0.500         0.500      0.000                         1-2-5 x49, 1-2-3-2-5 x1
+  x1.70 50    0.000    1.407        0.040    0.960          0.960         0.960      0.020 1-2-5 x47, 1-2-4-5 x1, 1-3-2-5 x1, 1-2-3-2-5 x1
+
+tempo rows of the parent with the largest frame interval (1.20 s, cycle 44):
+ parent variant  n_frames reading_c   S_E    D2    p2    D3   D3p
+     44   x0.60        29     1-2-5 0.000 7.859 0.048 0.095 0.095
+     44   x0.70        34     1-2-5 0.000 6.570 0.048 0.095 0.095
+     44   x0.80        39     1-2-5 0.000 5.609 0.048 0.095 0.095
+     44   x1.25        61     1-2-5 0.000 2.285 0.381 0.190 0.762
+     44   x1.40        69     1-2-5 0.000 3.991 0.095 0.190 0.190
+     44   x1.70        83     1-2-5 0.000 4.879 0.048 0.095 0.095
+
+split visit (negative control; D2 is the only channel that can react):
+variant  n  S_E_max  det_D3p  det_pE10  det_p2_05  det_D3_phaseA  readings
+   gap2 50    0.000    0.060     0.000      0.060          0.060 1-2-5 x50
+   gap3 50    0.000    0.060     0.000      0.060          0.060 1-2-5 x50
+   gap5 50    0.000    0.060     0.000      0.060          0.060 1-2-5 x50
+
+====================================================================================================
+2g. D1 exhibit: Phase A D1 (p_1 <= 0.05, the D3 path) vs E1 (p_E <= 0.05) on the same synthetic cycles
+====================================================================================================
+        kind    n  E1_pE05  E1_D3p  D1_p1_05  PhaseA_D3
+  omission_2   50    1.000   1.000     0.360      0.380
+  swap_1-5-2   50    1.000   1.000     0.800      0.820
+repeat_2_far   50    1.000   1.000     0.800      0.820
+     subst_3 2150    0.653   0.669     0.119      0.148
+     subst_4 1500    1.000   1.000     0.353      0.373
+   foreign_3 2150    0.641   0.983     0.521      0.876
+   foreign_4 1500    1.000   1.000     0.800      0.820
+D1 detection per fold: {'subst_4': {0: 0.0, 1: 1.0, 2: 0.0, 3: 0.967, 4: 0.0}, 'omission_2': {0: 0.0, 1: 1.0, 2: 0.0, 3: 1.0, 4: 0.0}, 'subst_3': {0: 0.023, 1: 0.651, 2: 0.0, 3: 0.023, 4: 0.023}}
+D1 values per fold (first 4 distinct): {'subst_4': {0: [3.296], 1: [3.332], 2: [2.565, 3.258], 3: [2.526, 3.219], 4: [3.258]}, 'omission_2': {0: [3.296], 1: [3.332], 2: [3.258], 3: [3.219], 4: [3.258]}}
+calibration D1 max per fold: {0: 3.296, 1: 2.303, 2: 3.258, 3: 2.565, 4: 3.258}
+
+====================================================================================================
+3. Acceptance items (stated before the battery was run; DESIGN_E section 4)
+====================================================================================================
+  [PASS] A1 detection >= 0.95 at D3' for omission, swap, far repeat, subst_4, foreign_4: omission_2 1.000; swap_1-5-2 1.000; repeat_2_far 1.000; subst_4 1.000; foreign_4 1.000
+  [PASS] A2 subst_3 readable-conditional detection >= 0.95 (D3'): 1.000 (n = 1403 readable of 2150)
+  [FAIL] A3 mid-dwell flicker multi-match S_E <= 1.2 in every parent (Box-2 block >= 6 frames): max 1.7933 over n = 46
+  [PASS] A4a the 51 real normal S_E are 50 x 0 and 1 x 1.09 (cycle 19): 50 x 0; positive: cycle 19 = 1.0900
+  [PASS] A4b D3' normal alarm set equals the Phase A D3 set: D3' [0, 4, 19, 48] vs Phase A D3 [0, 4, 19, 48]
+  [PASS] A5 unit cases of section 2.4 pass: 16 asserted DP cases (+ collapse/traceback/plain asserts) at import
+  [PASS] A6 D1 exhibit reproduces the tie mechanism (D1 detection < 0.5 on subst_4 or omission): subst_4 0.353; omission 0.360
+
+ALL ACCEPTANCE ITEMS PASS: False
+smoke test of e1_core.oneshot_tables (51 normals + synthetic rows relabelled: omission_2 -> seq135, subst_4 -> seq145, tempo x0.60 -> fast, tempo x1.70 -> slow): passed
+ atype  n_pairs  n_cycles  phaseA_D3  E1_D3p  pE_alone  pE_005  path_pE_only  path_p2_only  path_both  S_E_min  S_E_p10  S_E_med  S_E_max  far_se
+normal       51        51      0.078   0.078     0.020   0.020         0.020         0.059      0.000    0.000    0.000    0.000    1.090   0.042
+seq135       50        50      0.380   1.000     1.000   1.000         0.980         0.000      0.020    7.858    7.858    8.145    8.524     NaN
+seq145     1500      1500      0.373   1.000     1.000   1.000         0.980         0.000      0.020    9.808   11.597   13.643   20.628     NaN
+  fast       50        50      0.920   0.920     0.000   0.000         0.000         0.920      0.000    0.000    0.000    0.000    0.000     NaN
+  slow       50        50      0.960   0.960     0.060   0.040         0.000         0.920      0.040    0.000    0.000    0.000    1.407     NaN
+           group  n_folds  auroc_mean  auroc_sd  auprc_mean
+          seq135        5       1.000     0.000       1.000
+          seq145        5       1.000     0.000       1.000
+    seq(135+145)        5       1.000     0.000       1.000
+            fast        5       0.489     0.025       0.494
+            slow        5       0.517     0.045       0.522
+tempo(fast+slow)        5       0.503     0.034       0.671
+
+====================================================================================================
+4. Outputs
+====================================================================================================
+sessions in memory at the end: ['session_01_training', 'session_02_normal_seq125'] | tripwires fired: [] | fa_common frame-table cache size: 0
+
+preliminary vs this run:
+                                                              quantity                   preliminary (workflow logs)                                      this run
+                                          omission_2 S_E min / D3' det                                  7.86 / 1.000                                 7.858 / 1.000
+                                                    swap_1-5-2 S_E min                                          9.30                                         9.301
+                                                  repeat_2_far S_E min                                          3.06                                         3.063
+                                  subst_3 p_E<=0.05 overall / readable        0.656 (500 sampled pairs) / 327 of 327         0.653 (all 2150 pairs) / 1403 of 1403
+                                                     subst_4 p_E<=0.05                                       500/500                                     1500/1500
+                                                     foreign_4 S_E min                                          1.95                                         1.950
+                                                     reach flicker S_E                                          1.09                                 1.0900-1.0900
+                                 mid-dwell flicker multi-match / plain        1.09 every parent / 2.29-8.70 (n = 46)                1.09-1.79 / 2.67-9.64 (n = 46)
+D1 p_1<=0.05: subst_4 / subst_3 / omission / swap / repeat / foreign_4 0.354 / 0.126 / 0.360 / 0.800 / 0.800 / 0.800 0.353 / 0.119 / 0.360 / 0.800 / 0.800 / 0.800
+wrote reports/faz_e/01_normal_rows.csv
+wrote reports/faz_e/01_folds.csv
+wrote reports/faz_e/01_synthetic_cycles.csv.gz
+wrote reports/faz_e/01_synthetic_summary.csv
+wrote reports/faz_e/01_acceptance.csv
+wrote reports/faz_e/01_s01_runs.csv
+wrote reports/faz_e/01_identity_check.csv
+wrote reports/faz_e/01_synthetic_perfold.csv
+wrote reports/faz_e/01_readable_split.csv
+wrote reports/faz_e/01_tempo.csv
+wrote reports/faz_e/01_synthetic_per_run.csv
+wrote reports/faz_e/01_frame_intervals.csv
+wrote reports/faz_e/01_synthetic.md
+done in 5.5 s
+[local_run] faz_e/01_e1_synthetic.py exit=0

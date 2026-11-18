@@ -1,0 +1,3 @@
+cell,n_normal_cycles,n_anom_cycles,loops_with_0,loops_with_2plus,mean_dur_normal_s
+B2 x pred,51,203,10,10,4.996199803921568
+ToF x tof,51,207,0,0,5.390548941176466

@@ -1,0 +1,161 @@
+== 0. kontrol (a2_cycles ile yeniden insa) ==
+  b2 x pred: CSV test dongusu 254, a2_cycles ile eslesen 254, visit_seq+atype ayni 254, yalniz CSV'de 0
+  tof x tof: CSV test dongusu 258, a2_cycles ile eslesen 258, visit_seq+atype ayni 258, yalniz CSV'de 0
+
+== 1. D3 alarmi (alpha = 0.10; esik min(p1,p2) <= 0.05) kanal dokumu ==
+-- b2 x pred
+atype  n_pairs  n_cycles  n_D3  n_D1_only  n_D2_only  n_both  n_none  D3alarm  D1alarm  D2alarm
+ fast      240        48   221         36        169      16      19 0.920833 0.216667 0.770833
+ slow      255        51   237          0        237       0      18 0.929412 0.000000 0.929412
+tempo      495        99   458         36        406      16      37 0.925253 0.105051 0.852525
+-- tof x tof
+atype  n_pairs  n_cycles  n_D3  n_D1_only  n_D2_only  n_both  n_none  D3alarm  D1alarm  D2alarm
+ fast      245        49   228        163         18      47      17 0.930612 0.857143 0.265306
+ slow      260        52   156          0        156       0     104 0.600000 0.000000 0.600000
+tempo      505       101   384        163        174      47     121 0.760396 0.415842 0.437624
+
+== 2. Kisalmis dizi (ziyaret dizisinde Box5 yok) ==
+-- b2 x pred
+ atype               grup  n_pairs  n_cycles  share_trunc_pairs  D1alarm  D2alarm  D3alarm  D2alone_a10
+normal                tum       51        51           0.000000 0.019608 0.058824 0.078431     0.078431
+normal kisalmis(Box5 yok)        0         0                NaN      NaN      NaN      NaN          NaN
+normal      tam(Box5 var)       51        51                NaN 0.019608 0.058824 0.078431     0.078431
+  fast                tum      240        48           0.270833 0.216667 0.770833 0.920833     0.800000
+  fast kisalmis(Box5 yok)       65        13                NaN 0.800000 0.292308 0.846154     0.384615
+  fast      tam(Box5 var)      175        35                NaN 0.000000 0.948571 0.948571     0.954286
+  slow                tum      255        51           0.000000 0.000000 0.929412 0.929412     0.992157
+  slow kisalmis(Box5 yok)        0         0                NaN      NaN      NaN      NaN          NaN
+  slow      tam(Box5 var)      255        51                NaN 0.000000 0.929412 0.929412     0.992157
+-- tof x tof
+ atype               grup  n_pairs  n_cycles  share_trunc_pairs  D1alarm  D2alarm  D3alarm  D2alone_a10
+normal                tum       51        51           0.000000 0.000000 0.078431 0.078431     0.098039
+normal kisalmis(Box5 yok)        0         0                NaN      NaN      NaN      NaN          NaN
+normal      tam(Box5 var)       51        51                NaN 0.000000 0.078431 0.078431     0.098039
+  fast                tum      245        49           0.816327 0.857143 0.265306 0.930612     0.322449
+  fast kisalmis(Box5 yok)      200        40                NaN 1.000000 0.235000 1.000000     0.300000
+  fast      tam(Box5 var)       45         9                NaN 0.222222 0.400000 0.622222     0.422222
+  slow                tum      260        52           0.000000 0.000000 0.600000 0.600000     0.880769
+  slow kisalmis(Box5 yok)        0         0                NaN      NaN      NaN      NaN          NaN
+  slow      tam(Box5 var)      260        52                NaN 0.000000 0.600000 0.600000     0.880769
+
+== 3. Ikincil tempo tanimi: D2 tek basina alpha = 0.10 (ve referans: D2 tek basina 0.05, D3 0.10) ==
+-- b2 x pred: normal n=51  FAR D2@0.10=0.078 [0.031; 0.185]; FAR D3@0.10=0.078
+   fast  : D2 tek basina a=0.10: 0.800 [0.688; 0.900] | D2 a=0.05: 0.771 | D3 a=0.10: 0.921 [0.863; 0.967]
+   slow  : D2 tek basina a=0.10: 0.992 [0.980; 1.000] | D2 a=0.05: 0.929 | D3 a=0.10: 0.929 [0.871; 0.976]
+   tempo : D2 tek basina a=0.10: 0.899 [0.840; 0.947] | D2 a=0.05: 0.853 | D3 a=0.10: 0.925 [0.885; 0.960]
+-- tof x tof: normal n=51  FAR D2@0.10=0.098 [0.043; 0.210]; FAR D3@0.10=0.078
+   fast  : D2 tek basina a=0.10: 0.322 [0.208; 0.445] | D2 a=0.05: 0.265 | D3 a=0.10: 0.931 [0.857; 0.992]
+   slow  : D2 tek basina a=0.10: 0.881 [0.842; 0.915] | D2 a=0.05: 0.600 | D3 a=0.10: 0.600 [0.600; 0.600]
+   tempo : D2 tek basina a=0.10: 0.610 [0.529; 0.691] | D2 a=0.05: 0.438 | D3 a=0.10: 0.760 [0.717; 0.808]
+-- tof x pred: normal n=50  FAR D2@0.10=0.080 [0.032; 0.188]; FAR D3@0.10=0.060
+   fast  : D2 tek basina a=0.10: 0.365 [0.230; 0.504] | D2 a=0.05: 0.304 | D3 a=0.10: 0.930 [0.848; 0.996]
+   slow  : D2 tek basina a=0.10: 0.988 [0.973; 1.000] | D2 a=0.05: 0.882 | D3 a=0.10: 0.882 [0.843; 0.918]
+   tempo : D2 tek basina a=0.10: 0.693 [0.600; 0.781] | D2 a=0.05: 0.608 | D3 a=0.10: 0.905 [0.862; 0.942]
+-- b2 x tof: normal n=51  FAR D2@0.10=0.039 [0.011; 0.132]; FAR D3@0.10=0.059
+   fast  : D2 tek basina a=0.10: 0.698 [0.600; 0.784] | D2 a=0.05: 0.673 | D3 a=0.10: 0.788 [0.735; 0.837]
+   slow  : D2 tek basina a=0.10: 0.877 [0.800; 0.942] | D2 a=0.05: 0.827 | D3 a=0.10: 0.827 [0.738; 0.904]
+   tempo : D2 tek basina a=0.10: 0.790 [0.729; 0.850] | D2 a=0.05: 0.752 | D3 a=0.10: 0.808 [0.756; 0.857]
+
+== 4. Oracle (ToF x tof) slow: D1 / D2 / D3 ayri ayri ve p dagilimi ==
+-- ToF x tof: slow n_pairs=260, dongu=52
+   D1 (p1<=0.05)             : 0/260 = 0.000 [0.000; 0.000]   (normal FAR 0.000)
+   D2 (p2<=0.05)             : 156/260 = 0.600 [0.600; 0.600]   (normal FAR 0.078)
+   D3 (alpha=0.10)           : 156/260 = 0.600 [0.600; 0.600]   (normal FAR 0.078)
+   D2 tek basina (p2<=0.10)  : 229/260 = 0.881 [0.842; 0.919]   (normal FAR 0.098)
+   D1 tek basina (p1<=0.10)  : 0/260 = 0.000 [0.000; 0.000]   (normal FAR 0.000)
+   kanal: {'D1_only': 0, 'D2_only': 156, 'both': 0, 'none': 104}
+   p1: min 1.000 q10 1.000 q25 1.000 med 1.000 q75 1.000 q90 1.000 max 1.000 | <=.05:0 (.05,.10]:0 (.10,.20]:0 (.20,.50]:0 >.50:260 (p==1: 260)
+   p2: min 0.045 q10 0.045 q25 0.048 med 0.048 q75 0.095 q90 0.136 max 0.182 | <=.05:156 (.05,.10]:73 (.10,.20]:31 (.20,.50]:0 >.50:0 (p==1: 0)
+   p3: min 0.091 q10 0.091 q25 0.095 med 0.095 q75 0.190 q90 0.273 max 0.364 | <=.05:0 (.05,.10]:156 (.10,.20]:73 (.20,.50]:31 >.50:0 (p==1: 0)
+   kat bazinda tespit (f: D1/D2/D3): {0: (0.0, 1.0, 1.0), 1: (0.0, 1.0, 1.0), 2: (0.0, 0.0, 0.0), 3: (0.0, 0.0, 0.0), 4: (0.0, 1.0, 1.0)}
+   dongu bazinda D3: 5/5 kat alarm 0, hic alarm yok 0, karisik 52 (dongu 52)
+   alarm(D3)     : n=156 dur_s medyan 8.30 [IQR 7.48; 8.70] D0 med 1.26  D1 med 0.21  D2 med 4.60  n_visits med 3  visit_seq: {'1-2-5': 156}
+   kacirilan(D3) : n=104 dur_s medyan 8.30 [IQR 7.48; 8.70] D0 med 5.23  D1 med 0.21  D2 med 5.15  n_visits med 3  visit_seq: {'1-2-5': 104}
+   normal: dur_s medyan 5.00 [IQR 4.55; 5.25]  D0 med 0.55  D1 med 0.21  D2 med 1.35
+   slow: dur_s medyan 8.30 [IQR 7.48; 8.70]
+-- ToF x pred: slow n_pairs=255, dongu=51
+   D1 (p1<=0.05)             : 0/255 = 0.000 [0.000; 0.000]   (normal FAR 0.000)
+   D2 (p2<=0.05)             : 225/255 = 0.882 [0.843; 0.918]   (normal FAR 0.060)
+   D3 (alpha=0.10)           : 225/255 = 0.882 [0.843; 0.918]   (normal FAR 0.060)
+   D2 tek basina (p2<=0.10)  : 252/255 = 0.988 [0.973; 1.000]   (normal FAR 0.080)
+   D1 tek basina (p1<=0.10)  : 0/255 = 0.000 [0.000; 0.000]   (normal FAR 0.000)
+   kanal: {'D1_only': 0, 'D2_only': 225, 'both': 0, 'none': 30}
+   p1: min 1.000 q10 1.000 q25 1.000 med 1.000 q75 1.000 q90 1.000 max 1.000 | <=.05:0 (.05,.10]:0 (.10,.20]:0 (.20,.50]:0 >.50:255 (p==1: 255)
+   p2: min 0.045 q10 0.045 q25 0.048 med 0.048 q75 0.050 q90 0.095 max 0.143 | <=.05:225 (.05,.10]:27 (.10,.20]:3 (.20,.50]:0 >.50:0 (p==1: 0)
+   p3: min 0.091 q10 0.091 q25 0.095 med 0.095 q75 0.100 q90 0.190 max 0.286 | <=.05:0 (.05,.10]:225 (.10,.20]:21 (.20,.50]:9 >.50:0 (p==1: 0)
+   kat bazinda tespit (f: D1/D2/D3): {0: (0.0, 1.0, 1.0), 1: (0.0, 1.0, 1.0), 2: (0.0, 0.88, 0.88), 3: (0.0, 0.53, 0.53), 4: (0.0, 1.0, 1.0)}
+   dongu bazinda D3: 5/5 kat alarm 27, hic alarm yok 0, karisik 24 (dongu 51)
+   alarm(D3)     : n=225 dur_s medyan 8.40 [IQR 7.60; 8.70] D0 med 4.71  D1 med 0.21  D2 med 4.95  n_visits med 3  visit_seq: {'1-2-5': 225}
+   kacirilan(D3) : n=30 dur_s medyan 7.80 [IQR 7.40; 8.55] D0 med 5.57  D1 med 0.21  D2 med 4.11  n_visits med 3  visit_seq: {'1-2-5': 30}
+   normal: dur_s medyan 5.00 [IQR 4.53; 5.20]  D0 med 0.79  D1 med 0.21  D2 med 1.57
+   slow: dur_s medyan 8.30 [IQR 7.50; 8.70]
+
+== 4b. Oracle slow: D2'yi belirleyen adim (en buyuk |z|) ==
+(D2 degerleri CSV ile birebir yeniden uretildi)
+-- ToF x tof: en buyuk z veren adim x D2 alarmi (cift sayisi)
+a2        D2 alarm  D2 alarm yok
+top_step                        
+dwell_1          4             1
+dwell_2          3             2
+dwell_5          0             3
+gap_1_2        138            86
+gap_2_5         11            12
+   adim bazinda z medyani (slow): z_dwell1=1.49, z_gap12=4.75, z_dwell2=0.67, z_gap25=2.32, z_dwell5=1.41
+-- ToF x pred: en buyuk z veren adim x D2 alarmi (cift sayisi)
+a2        D2 alarm  D2 alarm yok
+top_step                        
+dwell_1          4             1
+dwell_2          3             2
+dwell_5          0             3
+gap_1_2        200            20
+gap_2_5         18             4
+   adim bazinda z medyani (slow): z_dwell1=1.46, z_gap12=4.75, z_dwell2=0.64, z_gap25=2.32, z_dwell5=2.37
+
+== 4c. Kat bazinda D2 kalibrasyon ustleri ve slow D2 skorlari ==
+-- b2 x pred
+atype  f  n_cal  cal_D2_top1  cal_D2_top2  cal_D2_top3  min_p  n_test  D2_med  D2_q25  D2_q75  n_above_top1  n_above_top2  det_D2_a05  det_D2_a10  det_D3  det_D1
+ fast  0     19        3.224        2.478        2.190  0.050      48   4.204   3.754   4.228            36            38       0.750       0.792   0.958   0.271
+ slow  0     19        3.224        2.478        2.190  0.050      51   4.106   3.528   4.664            45            51       0.882       1.000   0.882   0.000
+ fast  1     20        4.001        3.253        2.976  0.048      48   4.850   3.921   4.883            36            36       0.750       0.750   0.958   0.271
+ slow  1     20        4.001        3.253        2.976  0.048      51   5.168   4.468   6.017            45            50       0.882       0.980   0.882   0.000
+ fast  2     21        3.134        2.847        2.562  0.045      48   4.612   3.387   4.638            36            37       0.750       0.771   0.750   0.000
+ slow  2     21        3.134        2.847        2.562  0.045      51   4.626   3.823   5.295            46            50       0.902       0.980   0.902   0.000
+ fast  3     22        2.998        2.602        1.940  0.043      48   4.046   3.233   4.071            39            40       0.812       0.833   0.979   0.271
+ slow  3     22        2.998        2.602        1.940  0.043      51   4.999   4.169   5.949            51            51       1.000       1.000   1.000   0.000
+ fast  4     20        2.530        2.219        1.959  0.048      48   3.476   3.360   3.556            38            41       0.792       0.854   0.958   0.271
+ slow  4     20        2.530        2.219        1.959  0.048      51   4.263   3.510   4.648            50            51       0.980       1.000   0.980   0.000
+-- tof x tof
+atype  f  n_cal  cal_D2_top1  cal_D2_top2  cal_D2_top3  min_p  n_test  D2_med  D2_q25  D2_q75  n_above_top1  n_above_top2  det_D2_a05  det_D2_a10  det_D3  det_D1
+ fast  0     20        2.728        2.481        2.262  0.048      49   2.475   1.721   3.028            17            21       0.347       0.429   0.939   0.857
+ slow  0     20        2.728        2.481        2.262  0.048      52   4.498   3.714   5.180            52            52       1.000       1.000   1.000   0.000
+ fast  1     20        2.766        2.432        2.280  0.048      49   2.253   2.215   3.934            17            17       0.347       0.347   0.939   0.857
+ slow  1     20        2.766        2.432        2.280  0.048      52   5.594   4.601   6.456            52            52       1.000       1.000   1.000   0.000
+ fast  2     20       11.274        4.026        3.028  0.048      49   2.545   2.508   4.228             7            17       0.143       0.347   0.918   0.857
+ slow  2     20       11.274        4.026        3.028  0.048      52   5.306   4.368   6.169             0            46       0.000       0.885   0.000   0.000
+ fast  3     21       11.052        4.974        3.511  0.045      49   2.147   2.123   3.607             7             7       0.143       0.143   0.918   0.857
+ slow  3     21       11.052        4.974        3.511  0.045      52   5.059   4.334   5.514             0            27       0.000       0.519   0.000   0.000
+ fast  4     21        2.624        2.453        2.026  0.045      49   1.802   1.568   2.751            17            17       0.347       0.347   0.939   0.857
+ slow  4     21        2.624        2.453        2.026  0.045      52   4.247   3.706   4.665            52            52       1.000       1.000   1.000   0.000
+-- ToF x pred / B2 x tof (slow)
+state_source segmentation atype  f  n_cal  cal_D2_top1  cal_D2_top2  cal_D2_top3  min_p  n_test  D2_med  D2_q25  D2_q75  n_above_top1  n_above_top2  det_D2_a05  det_D2_a10  det_D3  det_D1
+         tof         pred  slow  0     20        2.652        2.438        2.219  0.048      51   4.400   3.831   5.064            51            51       1.000       1.000   1.000     0.0
+         tof         pred  slow  1     20        2.710        2.366        2.214  0.048      51   5.470   4.501   6.312            51            51       1.000       1.000   1.000     0.0
+         tof         pred  slow  2     19        4.026        3.028        2.573  0.050      51   5.306   4.475   6.169            45            51       0.882       1.000   0.882     0.0
+         tof         pred  slow  3     20        4.974        3.511        2.638  0.048      51   5.143   4.335   5.514            27            48       0.529       0.941   0.529     0.0
+         tof         pred  slow  4     21        2.624        2.453        2.026  0.045      51   4.364   3.707   4.666            51            51       1.000       1.000   1.000     0.0
+          b2          tof  slow  0     20        3.576        2.812        2.424  0.048      52   5.412   4.066   8.326            39            47       0.750       0.904   0.750     0.0
+          b2          tof  slow  1     20        3.937        3.279        2.509  0.048      52   6.160   4.445   9.058            42            45       0.808       0.865   0.808     0.0
+          b2          tof  slow  2     20        3.133        2.990        2.907  0.048      52   8.237   4.088  12.892            45            47       0.865       0.904   0.865     0.0
+          b2          tof  slow  3     21        4.023        4.019        4.012  0.045      52  11.486   4.400  18.772            39            39       0.750       0.750   0.750     0.0
+          b2          tof  slow  4     21        2.437        2.290        2.225  0.045      52   6.843   3.536  11.196            50            50       0.962       0.962   0.962     0.0
+
+== 4d. ToF x tof kalibrasyon D2 asiri degerleri ==
+  f=0: en yuksek cal D2 = 2.728 (dongu session_02_normal_seq125/19, ToF kati 2, dur 4.80 s, dizi 1-2-5); sonraki 2.481
+  f=1: en yuksek cal D2 = 2.766 (dongu session_02_normal_seq125/1, ToF kati 3, dur 5.90 s, dizi 1-2-5); sonraki 2.432
+  f=2: en yuksek cal D2 = 11.274 (dongu session_02_normal_seq125/51, ToF kati 4, dur 25.00 s, dizi 1-2-5); sonraki 4.026
+  f=3: en yuksek cal D2 = 11.052 (dongu session_02_normal_seq125/51, ToF kati 4, dur 25.00 s, dizi 1-2-5); sonraki 4.974
+  f=4: en yuksek cal D2 = 2.624 (dongu session_02_normal_seq125/21, ToF kati 0, dur 6.00 s, dizi 1-2-5); sonraki 2.453
+
+== 5. rapor ==
+yazildi: <ROOT>\reports\faz_a4\02_tempo_channels.md
+[local_run] faz_a4/02_tempo_channels.py exit=0

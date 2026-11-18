@@ -1,0 +1,1 @@
+Toplam CPU yuku (5x2 s ortalama) olcum oncesi: %22,54; kosan baska proje python isi yok (local_job list: hepsi bitmis, exit 0); arka planda file-sync/remote-desktop vb. normal kullanici sureclari var.

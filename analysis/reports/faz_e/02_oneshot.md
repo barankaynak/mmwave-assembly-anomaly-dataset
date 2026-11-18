@@ -1,0 +1,140 @@
+# Phase E - E1 one-shot run on s03-s06 (secondary analysis) [S]
+
+**Computed once:** 2026-11-06 07:45 Turkey Standard Time by `faz_e/02_e1_oneshot.py` (E1_ONESHOT_GO=1; run time 8 s, CPU). **Plan:** `faz_e/DESIGN_E.md`, frozen part sha256 `d8c2cafd4a788f0b87e8e222e2ec8ae4e6e8dc74c81b687a885b7207df168d76`. Battery report: `reports/faz_e/01_synthetic.md`; failed battery acceptance items, each with a dated amendment in the plan before this run: A3 mid-dwell flicker multi-match S_E <= 1.2 in every parent (Box-2 block >= 6 frames).
+
+**Status.** Secondary analysis, designed after the Phase A results were known, on the posterior-mass quantity that had been looked at on the deviation sessions (DESIGN_E section 1), validated on synthetic deviations built from normal cycles, then run once. The Phase A rule (D3, B2 x pred, alpha = 0.10) stays the planned primary result. Given the Phase A reading table, the s03/s04 numbers check that the decision layer is consistent; they do not test the signal (plan sections 1 and 7).
+
+## 1. Phase A reproduction gate
+1270 of 1270 (cycle, f, role) rows of `reports/faz_a/04_cycle_scores.csv.gz` (b2, pred) reproduced; max |diff| D0-D2 8.9e-16, p0-p3 1.1e-16. Route/mu per fold and the s02 normal test S_E/p_E equal the battery's values. s02 natural_dev cycles are dropped before the tables; anomaly-session ones stay in the rates as in Phase A.
+
+## 2. Folds (fitted on s02 training normals; calibration on s02 calibration normals)
+
+| f | route | mu_1 | mu_2 | mu_5 | n_train | n_cal | n_test | cal_max | n_cal_pos |
+|---|---|---|---|---|---|---|---|---|---|
+| 0 | 1-2-5 | 8.373 | 8.046 | 5.640 | 21 | 19 | 214 | 1.090 | 1 |
+| 1 | 1-2-5 | 8.304 | 8.524 | 5.554 | 22 | 20 | 212 | 0.000 | 0 |
+| 2 | 1-2-5 | 7.996 | 8.254 | 5.485 | 20 | 21 | 213 | 0.000 | 0 |
+| 3 | 1-2-5 | 8.032 | 7.858 | 5.740 | 19 | 22 | 213 | 0.000 | 0 |
+| 4 | 1-2-5 | 8.563 | 8.145 | 5.571 | 20 | 20 | 214 | 1.090 | 1 |
+
+## 3. Summary at alpha = 0.10
+Rates over (cycle, fold) test pairs; anomaly cycles are tested in every fold. Alarm path: p_E channel = 2 p_E <= 0.10, p_2 channel = 2 p_2 <= 0.10; D3' alarms if either fires. `phaseA_published` = the Phase A D3 row of the brief.
+
+| atype | session | n_pairs | n_cycles | phaseA_D3 | E1_D3' | pE_alone | pE_005 | path_pE_only | path_p2_only | path_both | S_E_min | S_E_p10 | S_E_med | S_E_max | far_se | phaseA_published |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| normal | session_02_normal_seq125 (s02) | 51 | 51 | 0.078 | 0.078 | 0.020 | 0.020 | 0.020 | 0.059 | 0.000 | 0.000 | 0.000 | 0.000 | 1.090 | 0.042 | 0.078 |
+| seq135 | s03 | 280 | 56 | 0.254 | 1.000 | 1.000 | 1.000 | 0.946 | 0.000 | 0.054 | 11.222 | 12.816 | 14.327 | 17.521 | nan | 0.254 |
+| seq145 | s04 | 240 | 48 | 0.475 | 1.000 | 1.000 | 1.000 | 0.875 | 0.000 | 0.125 | 11.532 | 12.493 | 13.940 | 20.331 | nan | 0.475 |
+| fast | s05 | 240 | 48 | 0.921 | 0.963 | 0.271 | 0.271 | 0.192 | 0.692 | 0.079 | 0.000 | 0.000 | 0.000 | 7.017 | nan | 0.921 |
+| slow | s06 | 255 | 51 | 0.929 | 0.929 | 0.000 | 0.000 | 0.000 | 0.929 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | nan | 0.929 |
+
+**AUROC of S_E** (per fold, mean and sd over folds):
+
+| group | n_folds | auroc_mean | auroc_sd | auprc_mean |
+|---|---|---|---|---|
+| seq135 | 5 | 1.000 | 0.000 | 1.000 |
+| seq145 | 5 | 1.000 | 0.000 | 1.000 |
+| seq(135+145) | 5 | 1.000 | 0.000 | 1.000 |
+| fast | 5 | 0.627 | 0.018 | 0.872 |
+| slow | 5 | 0.489 | 0.025 | 0.833 |
+| tempo(fast+slow) | 5 | 0.556 | 0.022 | 0.919 |
+
+**s03/s04 cycles whose collapsed reading contains Box 2** (the only way a sequence deviation can be missed by E1):
+
+| atype | session | n_cycles | n_collapsed_reading_with_box2 | readings_with_box2 |
+|---|---|---|---|---|
+| seq135 | s03 | 56 | 1 | 1-3-5-2 x1 |
+| seq145 | s04 | 48 | 0 |  |
+
+**Collapsed readings per session** (pairs, cycles, sequence-channel and D3' alarm rates):
+
+| atype | reading_c | n_pairs | S_E_med | pE_005 | E1_D3' | phaseA_D3 | n_cycles |
+|---|---|---|---|---|---|---|---|
+| fast | 1-2 | 60 | 5.571 | 1.000 | 1.000 | 0.850 | 12 |
+| fast | 1-2-4 | 5 | 6.848 | 1.000 | 1.000 | 0.800 | 1 |
+| fast | 1-2-5 | 175 | 0.000 | 0.000 | 0.949 | 0.949 | 35 |
+| normal | 1-2-5 | 50 | 0.000 | 0.000 | 0.060 | 0.060 | 50 |
+| normal | 1-3-2-5 | 1 | 1.090 | 1.000 | 1.000 | 1.000 | 1 |
+| seq135 | 1-3-5 | 275 | 14.328 | 1.000 | 1.000 | 0.244 | 55 |
+| seq135 | 1-3-5-2 | 5 | 14.325 | 1.000 | 1.000 | 0.800 | 1 |
+| seq145 | 1-4-5 | 240 | 13.940 | 1.000 | 1.000 | 0.475 | 48 |
+| slow | 1-2-5 | 255 | 0.000 | 0.000 | 0.929 | 0.929 | 51 |
+
+**Per fold:**
+
+| atype | f | n | E1_D3' | phaseA_D3 | pE_005 | S_E_min |
+|---|---|---|---|---|---|---|
+| fast | 0 | 48 | 0.958 | 0.958 | 0.271 | 0.000 |
+| fast | 1 | 48 | 0.958 | 0.958 | 0.271 | 0.000 |
+| fast | 2 | 48 | 0.958 | 0.750 | 0.271 | 0.000 |
+| fast | 3 | 48 | 0.979 | 0.979 | 0.271 | 0.000 |
+| fast | 4 | 48 | 0.958 | 0.958 | 0.271 | 0.000 |
+| normal | 0 | 11 | 0.000 | 0.000 | 0.000 | 0.000 |
+| normal | 1 | 9 | 0.111 | 0.111 | 0.111 | 0.000 |
+| normal | 2 | 10 | 0.100 | 0.100 | 0.000 | 0.000 |
+| normal | 3 | 10 | 0.100 | 0.100 | 0.000 | 0.000 |
+| normal | 4 | 11 | 0.091 | 0.091 | 0.000 | 0.000 |
+| seq135 | 0 | 56 | 1.000 | 0.071 | 1.000 | 11.410 |
+| seq135 | 1 | 56 | 1.000 | 1.000 | 1.000 | 11.888 |
+| seq135 | 2 | 56 | 1.000 | 0.054 | 1.000 | 11.617 |
+| seq135 | 3 | 56 | 1.000 | 0.071 | 1.000 | 11.222 |
+| seq135 | 4 | 56 | 1.000 | 0.071 | 1.000 | 11.509 |
+| seq145 | 0 | 48 | 1.000 | 0.125 | 1.000 | 11.720 |
+| seq145 | 1 | 48 | 1.000 | 1.000 | 1.000 | 12.198 |
+| seq145 | 2 | 48 | 1.000 | 0.125 | 1.000 | 11.927 |
+| seq145 | 3 | 48 | 1.000 | 1.000 | 1.000 | 11.532 |
+| seq145 | 4 | 48 | 1.000 | 0.125 | 1.000 | 11.819 |
+| slow | 0 | 51 | 0.882 | 0.882 | 0.000 | 0.000 |
+| slow | 1 | 51 | 0.882 | 0.882 | 0.000 | 0.000 |
+| slow | 2 | 51 | 0.902 | 0.902 | 0.000 | 0.000 |
+| slow | 3 | 51 | 1.000 | 1.000 | 0.000 | 0.000 |
+| slow | 4 | 51 | 0.980 | 0.980 | 0.000 | 0.000 |
+
+## 4. Predictions (section 6, written before the run) against the observed values
+
+| quantity | prediction (section 6) | observed | within |
+|---|---|---|---|
+| seq135, E1 D3' / p_E alone | 0.98-1.00 | 1.000 / 1.000 | True |
+| seq145, E1 D3' / p_E alone | 0.98-1.00 | 1.000 / 1.000 | True |
+| S_E on sequence cycles: min / median | min >= 7.86; typical 12-16 | 11.222 / 14.181 | True |
+| AUROC of S_E, seq(135+145) vs normal | 0.98-1.00 | 1.000 | True |
+| fast, E1 D3' | 0.90-1.00 | 0.963 | True |
+| slow, E1 D3' | 0.91-0.94 | 0.929 | True |
+| sequence-channel alarms (2 p_E <= 0.10) on tempo sessions: fast / slow | fast ~ 0.25, slow ~ 0 | 0.271 / 0.000 | None |
+| FAR, E1 D3' | 0.078 (4/51), same cycles as Phase A | 0.078; sets {'phaseA_D3': [0, 4, 19, 48], 'E1_D3p': [0, 4, 19, 48]} | True |
+
+## 5. Reading-rule criteria (section 7)
+
+| criterion (section 7) | observed | holds |
+|---|---|---|
+| (a) tempo retention: fast >= 0.90 and slow >= 0.90 under E1 D3' | fast 0.963, slow 0.929 | True |
+| (b) FAR unchanged: D3' alarms the same normal cycles as Phase A D3 | {'phaseA_D3': [0, 4, 19, 48], 'E1_D3p': [0, 4, 19, 48]} | True |
+| (c) battery acceptance items (reports/faz_e/01_acceptance.csv; a failed item counts only with its dated AMENDMENT in Sapmalar) | failed as written: A3 mid-dwell flicker multi-match S_E <= 1.2 in every parent (Box-2 block >= 6 frames) -> amended before this run (DESIGN_E Sapmalar) | True |
+| seq135 and seq145 >= 0.95 under E1 D3' | seq135 1.000, seq145 1.000 | True |
+
+**Success as defined in section 7: True.** Reading rule: s03/s04 >= 0.95 is reported as consistent with the mechanism and foreseeable from the Phase A readings (not as a predicted-and-confirmed test); < 0.95 is a bug-class finding to be investigated on normal data only, with no changed rule re-run on s03/s04. If (a) fails, E1 is reported as a sequence-only improvement with the tempo loss in numbers; if (b) fails, the FAR is reported with its SE, without re-tuning. The full table is reported in every case, negative rows included.
+
+## 6. Files
+- `reports/faz_e/02_oneshot.md`
+- `reports/faz_e/02_oneshot_cycles.csv.gz`
+- `reports/faz_e/02_oneshot_summary.csv`
+- `reports/faz_e/02_oneshot_auroc.csv`
+- `reports/faz_e/02_oneshot_folds.csv`
+- `reports/faz_e/02_oneshot_readings.csv`
+- `reports/faz_e/02_oneshot_perfold.csv`
+
+## 7. Provenance
+- Python 3.12.13, numpy 2.5.4, pandas 3.0.6; host <LOCAL_HOST>; CPU only.
+- `faz_e/e1_core.py` sha256 `ea5b927640107b3ca7a9d2d32f9adfb38aa0a764a6fee9d83757185a1d87f2c6`
+- `faz_e/02_e1_oneshot.py` sha256 `4b070e77453c732407eb91bbb960101a9fd419cb6bfd779a398bc0913cedb959`
+- `faz_a2/a2_cycles.py` sha256 `775b8c7e8ee8daf2bcd53caa55394204923d3bb6f61ecbc19ec5e4536a9bc70d`
+- `faz_a/fa_common.py` sha256 `abc322022283df657b534fd1da6ae3a04b11d5707d49ad2a022b336a15ca6dce`
+- `reports/faz_a/04_cycle_scores.csv.gz` sha256 `fc74eb7de34752e7cb56693fef5e46955e88be1f6761d4fd9b218ceb39609a77`
+- `reports/faz_a/folds_anom.csv` sha256 `3a36560b4e0e7c02afb868eb60fd72b0404ac11c0382ba69ce302f39cf35da3e`
+- `reports/faz_e/01_synthetic.md` sha256 `5be90e8d7763eeccb9143bd4118f04506464df71a2826020cb8bbe6fcffcbeeb`
+- `reports/faz_e/01_acceptance.csv` sha256 `dd9ada09d332f3ea6ec53994a4c77011d8566d7982123980f7c1665b6ac44b52`
+- `reports/faz_a/oof/b2__S1__f0.csv.gz` sha256 `7096b1970c872ba602a2cfd8f528c5e54618ac768491b56e8995b7ebfce65603`
+- `reports/faz_a/oof/b2__S1__f1.csv.gz` sha256 `2f587a2fae582e58a5486e6dff507e5c1341c2cfb2ca8df55f9be42f34011214`
+- `reports/faz_a/oof/b2__S1__f2.csv.gz` sha256 `287893bd8407148f34a928c67b2b181ff47072589057f25c9e93881edcb9c008`
+- `reports/faz_a/oof/b2__S1__f3.csv.gz` sha256 `73b1cd285416c2efb7d556f58d391bb3f83a57dd563a662c492ce48b3929dffd`
+- `reports/faz_a/oof/b2__S1__f4.csv.gz` sha256 `687a3a257fa7c509c7b3563d113649dbd77dfd02df88bfa930bd4974753c67fd`

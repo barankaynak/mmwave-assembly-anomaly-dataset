@@ -1,0 +1,350 @@
+[20:52:18] ortam {'torch': '2.6.0+cu124', 'cuda': '12.4', 'cudnn': 90100, 'gpu': 'NVIDIA GeForce RTX 3090', 'max_epochs': 120, 'seeds': [1, 2, 3, 4], 'smoke': False} free=23.30 GB
+[20:52:18] windows=16248 hm=(16272, 2, 48, 48)
+[20:52:18] seed 42 S0 split == Faz A (assert OK)
+[W1105 20:52:18.590083018 NNPACK.cpp:62] Could not initialize NNPACK! Reason: Unsupported hardware.
+[20:52:18] [cnngru S0s1] device=cuda model_seed=20261105 params=1,921,446 train=11698 val=1300 test=3250 | train class counts=[6873, 1700, 1011, 474, 402, 1238] cw=[0.2800000011920929, 1.149999976158142, 1.9299999475479126, 4.110000133514404, 4.849999904632568, 1.5700000524520874]
+[20:52:22] [cnngru S0s1] ep   1 train_loss=0.6592 val_loss=0.8126 * bad= 0 lr=4.98e-04 2.5s
+[20:52:24] [cnngru S0s1] ep   2 train_loss=0.4506 val_loss=0.6576 * bad= 0 lr=4.96e-04 1.9s
+[20:52:26] [cnngru S0s1] ep   3 train_loss=0.4227 val_loss=0.7257   bad= 1 lr=4.94e-04 1.9s
+[20:52:28] [cnngru S0s1] ep   4 train_loss=0.4179 val_loss=0.7038   bad= 2 lr=4.92e-04 1.9s
+[20:52:30] [cnngru S0s1] ep   5 train_loss=0.4010 val_loss=0.6284 * bad= 0 lr=4.91e-04 1.9s
+[20:52:32] [cnngru S0s1] ep   6 train_loss=0.3983 val_loss=0.6403   bad= 1 lr=4.89e-04 1.9s
+[20:52:33] [cnngru S0s1] ep   7 train_loss=0.3934 val_loss=0.6817   bad= 2 lr=4.87e-04 1.9s
+[20:52:35] [cnngru S0s1] ep   8 train_loss=0.3844 val_loss=0.6888   bad= 3 lr=4.85e-04 1.9s
+[20:52:37] [cnngru S0s1] ep   9 train_loss=0.3710 val_loss=0.6740   bad= 4 lr=4.83e-04 1.9s
+[20:52:39] [cnngru S0s1] ep  10 train_loss=0.3701 val_loss=0.6883   bad= 5 lr=4.81e-04 1.9s
+[20:52:41] [cnngru S0s1] ep  11 train_loss=0.3529 val_loss=0.6257 * bad= 0 lr=4.79e-04 1.9s
+[20:52:43] [cnngru S0s1] ep  12 train_loss=0.3536 val_loss=0.6140 * bad= 0 lr=4.78e-04 1.9s
+[20:52:45] [cnngru S0s1] ep  13 train_loss=0.3499 val_loss=0.5789 * bad= 0 lr=4.76e-04 1.9s
+[20:52:47] [cnngru S0s1] ep  14 train_loss=0.3490 val_loss=0.7433   bad= 1 lr=4.74e-04 1.9s
+[20:52:49] [cnngru S0s1] ep  15 train_loss=0.3366 val_loss=0.7202   bad= 2 lr=4.72e-04 1.9s
+[20:52:51] [cnngru S0s1] ep  16 train_loss=0.3297 val_loss=0.6449   bad= 3 lr=4.70e-04 1.9s
+[20:52:53] [cnngru S0s1] ep  17 train_loss=0.3375 val_loss=0.6022   bad= 4 lr=4.69e-04 1.9s
+[20:52:55] [cnngru S0s1] ep  18 train_loss=0.3259 val_loss=0.6312   bad= 5 lr=4.67e-04 1.9s
+[20:52:56] [cnngru S0s1] ep  19 train_loss=0.3100 val_loss=0.5394 * bad= 0 lr=4.65e-04 1.9s
+[20:52:58] [cnngru S0s1] ep  20 train_loss=0.3177 val_loss=0.5896   bad= 1 lr=4.63e-04 1.9s
+[20:53:00] [cnngru S0s1] ep  21 train_loss=0.3018 val_loss=0.5707   bad= 2 lr=4.62e-04 1.9s
+[20:53:02] [cnngru S0s1] ep  22 train_loss=0.2996 val_loss=0.5675   bad= 3 lr=4.60e-04 1.9s
+[20:53:04] [cnngru S0s1] ep  23 train_loss=0.2962 val_loss=0.5615   bad= 4 lr=4.58e-04 1.9s
+[20:53:06] [cnngru S0s1] ep  24 train_loss=0.2825 val_loss=0.5301 * bad= 0 lr=4.56e-04 1.9s
+[20:53:08] [cnngru S0s1] ep  25 train_loss=0.2631 val_loss=0.5334   bad= 1 lr=4.55e-04 1.9s
+[20:53:10] [cnngru S0s1] ep  26 train_loss=0.2589 val_loss=0.5006 * bad= 0 lr=4.53e-04 1.9s
+[20:53:12] [cnngru S0s1] ep  27 train_loss=0.2589 val_loss=0.4899 * bad= 0 lr=4.51e-04 1.9s
+[20:53:14] [cnngru S0s1] ep  28 train_loss=0.2534 val_loss=0.5377   bad= 1 lr=4.49e-04 1.9s
+[20:53:16] [cnngru S0s1] ep  29 train_loss=0.2466 val_loss=0.4522 * bad= 0 lr=4.48e-04 1.9s
+[20:53:18] [cnngru S0s1] ep  30 train_loss=0.2367 val_loss=0.5728   bad= 1 lr=4.46e-04 1.9s
+[20:53:19] [cnngru S0s1] ep  31 train_loss=0.2223 val_loss=0.4546   bad= 2 lr=4.44e-04 1.9s
+[20:53:21] [cnngru S0s1] ep  32 train_loss=0.2133 val_loss=0.4516 * bad= 0 lr=4.43e-04 1.9s
+[20:53:23] [cnngru S0s1] ep  33 train_loss=0.2064 val_loss=0.4093 * bad= 0 lr=4.41e-04 1.9s
+[20:53:25] [cnngru S0s1] ep  34 train_loss=0.2039 val_loss=0.5430   bad= 1 lr=4.39e-04 1.9s
+[20:53:27] [cnngru S0s1] ep  35 train_loss=0.1893 val_loss=0.4783   bad= 2 lr=4.38e-04 1.9s
+[20:53:29] [cnngru S0s1] ep  36 train_loss=0.1793 val_loss=0.4863   bad= 3 lr=4.36e-04 1.9s
+[20:53:31] [cnngru S0s1] ep  37 train_loss=0.1713 val_loss=0.4271   bad= 4 lr=4.34e-04 1.9s
+[20:53:33] [cnngru S0s1] ep  38 train_loss=0.1636 val_loss=0.4177   bad= 5 lr=4.33e-04 1.9s
+[20:53:35] [cnngru S0s1] ep  39 train_loss=0.1634 val_loss=0.3259 * bad= 0 lr=4.31e-04 1.9s
+[20:53:37] [cnngru S0s1] ep  40 train_loss=0.1500 val_loss=0.3633   bad= 1 lr=4.29e-04 1.9s
+[20:53:39] [cnngru S0s1] ep  41 train_loss=0.1405 val_loss=0.4915   bad= 2 lr=4.28e-04 1.9s
+[20:53:41] [cnngru S0s1] ep  42 train_loss=0.1454 val_loss=0.5638   bad= 3 lr=4.26e-04 1.9s
+[20:53:42] [cnngru S0s1] ep  43 train_loss=0.1393 val_loss=0.4362   bad= 4 lr=4.24e-04 1.9s
+[20:53:44] [cnngru S0s1] ep  44 train_loss=0.1316 val_loss=0.3789   bad= 5 lr=4.23e-04 1.9s
+[20:53:46] [cnngru S0s1] ep  45 train_loss=0.1314 val_loss=0.3496   bad= 6 lr=4.21e-04 1.9s
+[20:53:48] [cnngru S0s1] ep  46 train_loss=0.1138 val_loss=0.3160 * bad= 0 lr=4.20e-04 1.9s
+[20:53:50] [cnngru S0s1] ep  47 train_loss=0.1211 val_loss=0.3315   bad= 1 lr=4.18e-04 1.9s
+[20:53:52] [cnngru S0s1] ep  48 train_loss=0.1034 val_loss=0.3625   bad= 2 lr=4.16e-04 1.9s
+[20:53:54] [cnngru S0s1] ep  49 train_loss=0.1063 val_loss=0.3094 * bad= 0 lr=4.15e-04 1.9s
+[20:53:56] [cnngru S0s1] ep  50 train_loss=0.0958 val_loss=0.3497   bad= 1 lr=4.13e-04 1.9s
+[20:53:58] [cnngru S0s1] ep  51 train_loss=0.0986 val_loss=0.4013   bad= 2 lr=4.12e-04 1.9s
+[20:54:00] [cnngru S0s1] ep  52 train_loss=0.0904 val_loss=0.3456   bad= 3 lr=4.10e-04 1.9s
+[20:54:02] [cnngru S0s1] ep  53 train_loss=0.0822 val_loss=0.3954   bad= 4 lr=4.08e-04 1.9s
+[20:54:04] [cnngru S0s1] ep  54 train_loss=0.0767 val_loss=0.2989 * bad= 0 lr=4.07e-04 1.9s
+[20:54:06] [cnngru S0s1] ep  55 train_loss=0.0766 val_loss=0.3498   bad= 1 lr=4.05e-04 1.9s
+[20:54:07] [cnngru S0s1] ep  56 train_loss=0.0787 val_loss=0.3842   bad= 2 lr=4.04e-04 1.9s
+[20:54:09] [cnngru S0s1] ep  57 train_loss=0.0837 val_loss=0.4069   bad= 3 lr=4.02e-04 1.9s
+[20:54:11] [cnngru S0s1] ep  58 train_loss=0.0773 val_loss=0.3746   bad= 4 lr=4.01e-04 1.9s
+[20:54:13] [cnngru S0s1] ep  59 train_loss=0.0684 val_loss=0.2976 * bad= 0 lr=3.99e-04 1.9s
+[20:54:15] [cnngru S0s1] ep  60 train_loss=0.0692 val_loss=0.2922 * bad= 0 lr=3.98e-04 1.9s
+[20:54:17] [cnngru S0s1] ep  61 train_loss=0.0664 val_loss=0.4099   bad= 1 lr=3.96e-04 1.9s
+[20:54:19] [cnngru S0s1] ep  62 train_loss=0.0638 val_loss=0.3716   bad= 2 lr=3.95e-04 1.9s
+[20:54:21] [cnngru S0s1] ep  63 train_loss=0.0608 val_loss=0.3449   bad= 3 lr=3.93e-04 1.9s
+[20:54:23] [cnngru S0s1] ep  64 train_loss=0.0531 val_loss=0.3099   bad= 4 lr=3.92e-04 1.9s
+[20:54:25] [cnngru S0s1] ep  65 train_loss=0.0529 val_loss=0.3642   bad= 5 lr=3.90e-04 1.9s
+[20:54:27] [cnngru S0s1] ep  66 train_loss=0.0557 val_loss=0.3486   bad= 6 lr=3.89e-04 1.9s
+[20:54:29] [cnngru S0s1] ep  67 train_loss=0.0487 val_loss=0.3253   bad= 7 lr=3.87e-04 1.9s
+[20:54:31] [cnngru S0s1] ep  68 train_loss=0.0492 val_loss=0.4901   bad= 8 lr=3.86e-04 1.9s
+[20:54:32] [cnngru S0s1] ep  69 train_loss=0.0532 val_loss=0.3147   bad= 9 lr=3.84e-04 1.9s
+[20:54:34] [cnngru S0s1] ep  70 train_loss=0.0546 val_loss=0.3248   bad=10 lr=3.83e-04 1.9s
+[20:54:36] [cnngru S0s1] ep  71 train_loss=0.0442 val_loss=0.3266   bad=11 lr=3.81e-04 1.9s
+[20:54:38] [cnngru S0s1] ep  72 train_loss=0.0400 val_loss=0.3092   bad=12 lr=3.80e-04 1.9s
+[20:54:40] [cnngru S0s1] ep  73 train_loss=0.0472 val_loss=0.3498   bad=13 lr=3.78e-04 1.9s
+[20:54:42] [cnngru S0s1] ep  74 train_loss=0.0340 val_loss=0.3038   bad=14 lr=3.77e-04 1.9s
+[20:54:44] [cnngru S0s1] ep  75 train_loss=0.0419 val_loss=0.3437   bad=15 lr=3.76e-04 1.9s
+[20:54:46] [cnngru S0s1] ep  76 train_loss=0.0358 val_loss=0.3751   bad=16 lr=3.74e-04 1.9s
+[20:54:48] [cnngru S0s1] ep  77 train_loss=0.0344 val_loss=0.3568   bad=17 lr=3.73e-04 1.9s
+[20:54:50] [cnngru S0s1] ep  78 train_loss=0.0298 val_loss=0.3884   bad=18 lr=3.71e-04 1.9s
+[20:54:52] [cnngru S0s1] ep  79 train_loss=0.0344 val_loss=0.4768   bad=19 lr=3.70e-04 1.9s
+[20:54:54] [cnngru S0s1] ep  80 train_loss=0.0341 val_loss=0.3371   bad=20 lr=3.68e-04 1.9s
+[20:54:56] [cnngru S0s1] ep  81 train_loss=0.0469 val_loss=0.4335   bad=21 lr=3.67e-04 1.9s
+[20:54:57] [cnngru S0s1] ep  82 train_loss=0.0385 val_loss=0.3266   bad=22 lr=3.66e-04 1.9s
+[20:54:59] [cnngru S0s1] ep  83 train_loss=0.0220 val_loss=0.3195   bad=23 lr=3.64e-04 1.9s
+[20:55:01] [cnngru S0s1] ep  84 train_loss=0.0196 val_loss=0.3706   bad=24 lr=3.63e-04 1.9s
+[20:55:03] [cnngru S0s1] ep  85 train_loss=0.0344 val_loss=0.4068   bad=25 lr=3.62e-04 1.9s
+[20:55:03] [cnngru S0s1] early stop at epoch 85 (best 60, val_loss 0.2922)
+[20:55:03] [cnngru S0s1] DONE epochs_run=85 best_epoch=60 best_val_loss=0.2922 wall=164s | TEST n=3250 acc=0.9135 macroF1=0.8995
+[20:55:03] [cnngru S0s2] device=cuda model_seed=20261106 params=1,921,446 train=11698 val=1300 test=3250 | train class counts=[6873, 1700, 1011, 474, 402, 1238] cw=[0.2800000011920929, 1.149999976158142, 1.9299999475479126, 4.110000133514404, 4.849999904632568, 1.5700000524520874]
+[20:55:05] [cnngru S0s2] ep   1 train_loss=0.6722 val_loss=0.7819 * bad= 0 lr=4.98e-04 1.9s
+[20:55:07] [cnngru S0s2] ep   2 train_loss=0.4712 val_loss=0.7614 * bad= 0 lr=4.96e-04 1.9s
+[20:55:09] [cnngru S0s2] ep   3 train_loss=0.4445 val_loss=0.7323 * bad= 0 lr=4.94e-04 1.9s
+[20:55:11] [cnngru S0s2] ep   4 train_loss=0.4020 val_loss=0.7278 * bad= 0 lr=4.92e-04 1.9s
+[20:55:13] [cnngru S0s2] ep   5 train_loss=0.4014 val_loss=0.7004 * bad= 0 lr=4.91e-04 1.9s
+[20:55:15] [cnngru S0s2] ep   6 train_loss=0.4006 val_loss=0.6825 * bad= 0 lr=4.89e-04 1.9s
+[20:55:17] [cnngru S0s2] ep   7 train_loss=0.3910 val_loss=0.7019   bad= 1 lr=4.87e-04 1.9s
+[20:55:19] [cnngru S0s2] ep   8 train_loss=0.3770 val_loss=0.6509 * bad= 0 lr=4.85e-04 1.9s
+[20:55:21] [cnngru S0s2] ep   9 train_loss=0.3666 val_loss=0.6176 * bad= 0 lr=4.83e-04 1.9s
+[20:55:23] [cnngru S0s2] ep  10 train_loss=0.3662 val_loss=0.6652   bad= 1 lr=4.81e-04 1.9s
+[20:55:25] [cnngru S0s2] ep  11 train_loss=0.3556 val_loss=0.6956   bad= 2 lr=4.79e-04 1.9s
+[20:55:27] [cnngru S0s2] ep  12 train_loss=0.3569 val_loss=0.5950 * bad= 0 lr=4.78e-04 1.9s
+[20:55:29] [cnngru S0s2] ep  13 train_loss=0.3449 val_loss=0.6576   bad= 1 lr=4.76e-04 1.9s
+[20:55:30] [cnngru S0s2] ep  14 train_loss=0.3296 val_loss=0.5702 * bad= 0 lr=4.74e-04 1.9s
+[20:55:32] [cnngru S0s2] ep  15 train_loss=0.3397 val_loss=0.6065   bad= 1 lr=4.72e-04 1.9s
+[20:55:34] [cnngru S0s2] ep  16 train_loss=0.3211 val_loss=0.5510 * bad= 0 lr=4.70e-04 1.9s
+[20:55:36] [cnngru S0s2] ep  17 train_loss=0.3157 val_loss=0.5272 * bad= 0 lr=4.69e-04 1.9s
+[20:55:38] [cnngru S0s2] ep  18 train_loss=0.3110 val_loss=0.5382   bad= 1 lr=4.67e-04 1.9s
+[20:55:40] [cnngru S0s2] ep  19 train_loss=0.3121 val_loss=0.5941   bad= 2 lr=4.65e-04 1.9s
+[20:55:42] [cnngru S0s2] ep  20 train_loss=0.3087 val_loss=0.5587   bad= 3 lr=4.63e-04 1.9s
+[20:55:44] [cnngru S0s2] ep  21 train_loss=0.2983 val_loss=0.5122 * bad= 0 lr=4.62e-04 1.9s
+[20:55:46] [cnngru S0s2] ep  22 train_loss=0.2811 val_loss=0.5313   bad= 1 lr=4.60e-04 1.9s
+[20:55:48] [cnngru S0s2] ep  23 train_loss=0.2711 val_loss=0.5103 * bad= 0 lr=4.58e-04 1.9s
+[20:55:50] [cnngru S0s2] ep  24 train_loss=0.2619 val_loss=0.5246   bad= 1 lr=4.56e-04 1.9s
+[20:55:52] [cnngru S0s2] ep  25 train_loss=0.2624 val_loss=0.4761 * bad= 0 lr=4.55e-04 1.9s
+[20:55:54] [cnngru S0s2] ep  26 train_loss=0.2489 val_loss=0.5251   bad= 1 lr=4.53e-04 1.9s
+[20:55:55] [cnngru S0s2] ep  27 train_loss=0.2396 val_loss=0.4330 * bad= 0 lr=4.51e-04 1.9s
+[20:55:57] [cnngru S0s2] ep  28 train_loss=0.2340 val_loss=0.4695   bad= 1 lr=4.49e-04 1.9s
+[20:55:59] [cnngru S0s2] ep  29 train_loss=0.2247 val_loss=0.5293   bad= 2 lr=4.48e-04 1.9s
+[20:56:01] [cnngru S0s2] ep  30 train_loss=0.2223 val_loss=0.4083 * bad= 0 lr=4.46e-04 1.9s
+[20:56:03] [cnngru S0s2] ep  31 train_loss=0.2115 val_loss=0.4172   bad= 1 lr=4.44e-04 1.9s
+[20:56:05] [cnngru S0s2] ep  32 train_loss=0.2069 val_loss=0.4785   bad= 2 lr=4.43e-04 1.9s
+[20:56:07] [cnngru S0s2] ep  33 train_loss=0.1942 val_loss=0.4690   bad= 3 lr=4.41e-04 1.9s
+[20:56:09] [cnngru S0s2] ep  34 train_loss=0.1759 val_loss=0.4478   bad= 4 lr=4.39e-04 1.9s
+[20:56:11] [cnngru S0s2] ep  35 train_loss=0.1851 val_loss=0.3847 * bad= 0 lr=4.38e-04 1.9s
+[20:56:13] [cnngru S0s2] ep  36 train_loss=0.1677 val_loss=0.3901   bad= 1 lr=4.36e-04 1.9s
+[20:56:15] [cnngru S0s2] ep  37 train_loss=0.1596 val_loss=0.3611 * bad= 0 lr=4.34e-04 1.9s
+[20:56:17] [cnngru S0s2] ep  38 train_loss=0.1632 val_loss=0.3399 * bad= 0 lr=4.33e-04 1.9s
+[20:56:19] [cnngru S0s2] ep  39 train_loss=0.1399 val_loss=0.4266   bad= 1 lr=4.31e-04 1.9s
+[20:56:20] [cnngru S0s2] ep  40 train_loss=0.1507 val_loss=0.3517   bad= 2 lr=4.29e-04 1.9s
+[20:56:22] [cnngru S0s2] ep  41 train_loss=0.1462 val_loss=0.2867 * bad= 0 lr=4.28e-04 1.9s
+[20:56:24] [cnngru S0s2] ep  42 train_loss=0.1325 val_loss=0.4240   bad= 1 lr=4.26e-04 1.9s
+[20:56:26] [cnngru S0s2] ep  43 train_loss=0.1268 val_loss=0.3272   bad= 2 lr=4.24e-04 1.9s
+[20:56:28] [cnngru S0s2] ep  44 train_loss=0.1199 val_loss=0.3175   bad= 3 lr=4.23e-04 1.9s
+[20:56:30] [cnngru S0s2] ep  45 train_loss=0.1207 val_loss=0.4827   bad= 4 lr=4.21e-04 1.9s
+[20:56:32] [cnngru S0s2] ep  46 train_loss=0.1169 val_loss=0.3097   bad= 5 lr=4.20e-04 1.9s
+[20:56:34] [cnngru S0s2] ep  47 train_loss=0.1110 val_loss=0.3205   bad= 6 lr=4.18e-04 1.9s
+[20:56:36] [cnngru S0s2] ep  48 train_loss=0.1099 val_loss=0.3579   bad= 7 lr=4.16e-04 1.9s
+[20:56:38] [cnngru S0s2] ep  49 train_loss=0.1110 val_loss=0.3761   bad= 8 lr=4.15e-04 1.9s
+[20:56:40] [cnngru S0s2] ep  50 train_loss=0.0993 val_loss=0.3397   bad= 9 lr=4.13e-04 1.9s
+[20:56:42] [cnngru S0s2] ep  51 train_loss=0.0950 val_loss=0.3193   bad=10 lr=4.12e-04 1.9s
+[20:56:44] [cnngru S0s2] ep  52 train_loss=0.0919 val_loss=0.3411   bad=11 lr=4.10e-04 1.9s
+[20:56:46] [cnngru S0s2] ep  53 train_loss=0.0878 val_loss=0.3185   bad=12 lr=4.08e-04 1.9s
+[20:56:47] [cnngru S0s2] ep  54 train_loss=0.0763 val_loss=0.3496   bad=13 lr=4.07e-04 1.9s
+[20:56:49] [cnngru S0s2] ep  55 train_loss=0.0769 val_loss=0.3905   bad=14 lr=4.05e-04 1.9s
+[20:56:51] [cnngru S0s2] ep  56 train_loss=0.0749 val_loss=0.3341   bad=15 lr=4.04e-04 1.9s
+[20:56:53] [cnngru S0s2] ep  57 train_loss=0.0784 val_loss=0.2873   bad=16 lr=4.02e-04 1.9s
+[20:56:55] [cnngru S0s2] ep  58 train_loss=0.0761 val_loss=0.3531   bad=17 lr=4.01e-04 1.9s
+[20:56:57] [cnngru S0s2] ep  59 train_loss=0.0735 val_loss=0.3300   bad=18 lr=3.99e-04 1.9s
+[20:56:59] [cnngru S0s2] ep  60 train_loss=0.0608 val_loss=0.4133   bad=19 lr=3.98e-04 1.9s
+[20:57:01] [cnngru S0s2] ep  61 train_loss=0.0663 val_loss=0.3513   bad=20 lr=3.96e-04 1.9s
+[20:57:03] [cnngru S0s2] ep  62 train_loss=0.0548 val_loss=0.3132   bad=21 lr=3.95e-04 1.9s
+[20:57:05] [cnngru S0s2] ep  63 train_loss=0.0611 val_loss=0.3377   bad=22 lr=3.93e-04 1.9s
+[20:57:07] [cnngru S0s2] ep  64 train_loss=0.0608 val_loss=0.3129   bad=23 lr=3.92e-04 1.9s
+[20:57:09] [cnngru S0s2] ep  65 train_loss=0.0696 val_loss=0.3180   bad=24 lr=3.90e-04 1.9s
+[20:57:11] [cnngru S0s2] ep  66 train_loss=0.0598 val_loss=0.2794 * bad= 0 lr=3.89e-04 1.9s
+[20:57:12] [cnngru S0s2] ep  67 train_loss=0.0533 val_loss=0.2870   bad= 1 lr=3.87e-04 1.9s
+[20:57:14] [cnngru S0s2] ep  68 train_loss=0.0467 val_loss=0.3128   bad= 2 lr=3.86e-04 1.9s
+[20:57:16] [cnngru S0s2] ep  69 train_loss=0.0453 val_loss=0.3397   bad= 3 lr=3.84e-04 1.9s
+[20:57:18] [cnngru S0s2] ep  70 train_loss=0.0456 val_loss=0.3413   bad= 4 lr=3.83e-04 1.9s
+[20:57:20] [cnngru S0s2] ep  71 train_loss=0.0347 val_loss=0.3309   bad= 5 lr=3.81e-04 1.9s
+[20:57:22] [cnngru S0s2] ep  72 train_loss=0.0432 val_loss=0.3370   bad= 6 lr=3.80e-04 1.9s
+[20:57:24] [cnngru S0s2] ep  73 train_loss=0.0413 val_loss=0.2843   bad= 7 lr=3.78e-04 1.9s
+[20:57:26] [cnngru S0s2] ep  74 train_loss=0.0501 val_loss=0.3928   bad= 8 lr=3.77e-04 1.9s
+[20:57:28] [cnngru S0s2] ep  75 train_loss=0.0443 val_loss=0.3781   bad= 9 lr=3.76e-04 1.9s
+[20:57:30] [cnngru S0s2] ep  76 train_loss=0.0328 val_loss=0.3138   bad=10 lr=3.74e-04 1.9s
+[20:57:32] [cnngru S0s2] ep  77 train_loss=0.0501 val_loss=0.2959   bad=11 lr=3.73e-04 1.9s
+[20:57:34] [cnngru S0s2] ep  78 train_loss=0.0372 val_loss=0.3244   bad=12 lr=3.71e-04 1.9s
+[20:57:36] [cnngru S0s2] ep  79 train_loss=0.0360 val_loss=0.4853   bad=13 lr=3.70e-04 1.9s
+[20:57:38] [cnngru S0s2] ep  80 train_loss=0.0373 val_loss=0.3162   bad=14 lr=3.68e-04 1.9s
+[20:57:39] [cnngru S0s2] ep  81 train_loss=0.0324 val_loss=0.3483   bad=15 lr=3.67e-04 1.9s
+[20:57:41] [cnngru S0s2] ep  82 train_loss=0.0292 val_loss=0.3570   bad=16 lr=3.66e-04 1.9s
+[20:57:43] [cnngru S0s2] ep  83 train_loss=0.0348 val_loss=0.3342   bad=17 lr=3.64e-04 1.9s
+[20:57:45] [cnngru S0s2] ep  84 train_loss=0.0450 val_loss=0.3264   bad=18 lr=3.63e-04 1.9s
+[20:57:47] [cnngru S0s2] ep  85 train_loss=0.0246 val_loss=0.3381   bad=19 lr=3.62e-04 1.9s
+[20:57:49] [cnngru S0s2] ep  86 train_loss=0.0247 val_loss=0.4556   bad=20 lr=3.60e-04 1.9s
+[20:57:51] [cnngru S0s2] ep  87 train_loss=0.0279 val_loss=0.3567   bad=21 lr=3.59e-04 1.9s
+[20:57:53] [cnngru S0s2] ep  88 train_loss=0.0205 val_loss=0.3744   bad=22 lr=3.57e-04 1.9s
+[20:57:55] [cnngru S0s2] ep  89 train_loss=0.0236 val_loss=0.3886   bad=23 lr=3.56e-04 1.9s
+[20:57:57] [cnngru S0s2] ep  90 train_loss=0.0404 val_loss=0.3333   bad=24 lr=3.55e-04 1.9s
+[20:57:59] [cnngru S0s2] ep  91 train_loss=0.0225 val_loss=0.3440   bad=25 lr=3.53e-04 1.9s
+[20:57:59] [cnngru S0s2] early stop at epoch 91 (best 66, val_loss 0.2794)
+[20:57:59] [cnngru S0s2] DONE epochs_run=91 best_epoch=66 best_val_loss=0.2794 wall=175s | TEST n=3250 acc=0.9123 macroF1=0.8969
+[20:57:59] [cnngru S0s3] device=cuda model_seed=20261107 params=1,921,446 train=11698 val=1300 test=3250 | train class counts=[6873, 1700, 1011, 474, 402, 1238] cw=[0.2800000011920929, 1.149999976158142, 1.9299999475479126, 4.110000133514404, 4.849999904632568, 1.5700000524520874]
+[20:58:01] [cnngru S0s3] ep   1 train_loss=0.6520 val_loss=0.7470 * bad= 0 lr=4.98e-04 1.9s
+[20:58:03] [cnngru S0s3] ep   2 train_loss=0.4662 val_loss=0.7844   bad= 1 lr=4.96e-04 1.9s
+[20:58:05] [cnngru S0s3] ep   3 train_loss=0.4282 val_loss=0.6956 * bad= 0 lr=4.94e-04 1.9s
+[20:58:07] [cnngru S0s3] ep   4 train_loss=0.4247 val_loss=0.7865   bad= 1 lr=4.92e-04 1.9s
+[20:58:09] [cnngru S0s3] ep   5 train_loss=0.4063 val_loss=0.7492   bad= 2 lr=4.91e-04 1.9s
+[20:58:11] [cnngru S0s3] ep   6 train_loss=0.3956 val_loss=0.6528 * bad= 0 lr=4.89e-04 1.9s
+[20:58:12] [cnngru S0s3] ep   7 train_loss=0.3969 val_loss=0.7297   bad= 1 lr=4.87e-04 1.9s
+[20:58:14] [cnngru S0s3] ep   8 train_loss=0.3889 val_loss=0.6965   bad= 2 lr=4.85e-04 1.9s
+[20:58:16] [cnngru S0s3] ep   9 train_loss=0.3838 val_loss=0.6777   bad= 3 lr=4.83e-04 1.9s
+[20:58:18] [cnngru S0s3] ep  10 train_loss=0.3717 val_loss=0.6535   bad= 4 lr=4.81e-04 1.9s
+[20:58:20] [cnngru S0s3] ep  11 train_loss=0.3717 val_loss=0.6284 * bad= 0 lr=4.79e-04 1.9s
+[20:58:22] [cnngru S0s3] ep  12 train_loss=0.3656 val_loss=0.6694   bad= 1 lr=4.78e-04 1.9s
+[20:58:24] [cnngru S0s3] ep  13 train_loss=0.3613 val_loss=0.6833   bad= 2 lr=4.76e-04 1.9s
+[20:58:26] [cnngru S0s3] ep  14 train_loss=0.3578 val_loss=0.6448   bad= 3 lr=4.74e-04 1.9s
+[20:58:28] [cnngru S0s3] ep  15 train_loss=0.3540 val_loss=0.6463   bad= 4 lr=4.72e-04 1.9s
+[20:58:30] [cnngru S0s3] ep  16 train_loss=0.3506 val_loss=0.6523   bad= 5 lr=4.70e-04 1.9s
+[20:58:32] [cnngru S0s3] ep  17 train_loss=0.3392 val_loss=0.5971 * bad= 0 lr=4.69e-04 1.9s
+[20:58:34] [cnngru S0s3] ep  18 train_loss=0.3300 val_loss=0.5813 * bad= 0 lr=4.67e-04 1.9s
+[20:58:36] [cnngru S0s3] ep  19 train_loss=0.3289 val_loss=0.6581   bad= 1 lr=4.65e-04 1.9s
+[20:58:37] [cnngru S0s3] ep  20 train_loss=0.3294 val_loss=0.5723 * bad= 0 lr=4.63e-04 1.9s
+[20:58:39] [cnngru S0s3] ep  21 train_loss=0.3142 val_loss=0.5623 * bad= 0 lr=4.62e-04 1.9s
+[20:58:41] [cnngru S0s3] ep  22 train_loss=0.3091 val_loss=0.5299 * bad= 0 lr=4.60e-04 1.9s
+[20:58:43] [cnngru S0s3] ep  23 train_loss=0.3049 val_loss=0.5602   bad= 1 lr=4.58e-04 1.9s
+[20:58:45] [cnngru S0s3] ep  24 train_loss=0.2958 val_loss=0.5522   bad= 2 lr=4.56e-04 1.9s
+[20:58:47] [cnngru S0s3] ep  25 train_loss=0.2812 val_loss=0.4792 * bad= 0 lr=4.55e-04 1.9s
+[20:58:49] [cnngru S0s3] ep  26 train_loss=0.2782 val_loss=0.5661   bad= 1 lr=4.53e-04 1.9s
+[20:58:51] [cnngru S0s3] ep  27 train_loss=0.2754 val_loss=0.5119   bad= 2 lr=4.51e-04 1.9s
+[20:58:53] [cnngru S0s3] ep  28 train_loss=0.2654 val_loss=0.4813   bad= 3 lr=4.49e-04 1.9s
+[20:58:55] [cnngru S0s3] ep  29 train_loss=0.2548 val_loss=0.4987   bad= 4 lr=4.48e-04 1.9s
+[20:58:57] [cnngru S0s3] ep  30 train_loss=0.2467 val_loss=0.4960   bad= 5 lr=4.46e-04 1.9s
+[20:58:59] [cnngru S0s3] ep  31 train_loss=0.2372 val_loss=0.4688 * bad= 0 lr=4.44e-04 1.9s
+[20:59:01] [cnngru S0s3] ep  32 train_loss=0.2272 val_loss=0.4668 * bad= 0 lr=4.43e-04 1.9s
+[20:59:02] [cnngru S0s3] ep  33 train_loss=0.2161 val_loss=0.4739   bad= 1 lr=4.41e-04 1.9s
+[20:59:04] [cnngru S0s3] ep  34 train_loss=0.2018 val_loss=0.5254   bad= 2 lr=4.39e-04 1.9s
+[20:59:06] [cnngru S0s3] ep  35 train_loss=0.1930 val_loss=0.4261 * bad= 0 lr=4.38e-04 1.9s
+[20:59:08] [cnngru S0s3] ep  36 train_loss=0.1882 val_loss=0.3861 * bad= 0 lr=4.36e-04 1.9s
+[20:59:10] [cnngru S0s3] ep  37 train_loss=0.1831 val_loss=0.5047   bad= 1 lr=4.34e-04 1.9s
+[20:59:12] [cnngru S0s3] ep  38 train_loss=0.1762 val_loss=0.3524 * bad= 0 lr=4.33e-04 1.9s
+[20:59:14] [cnngru S0s3] ep  39 train_loss=0.1645 val_loss=0.4159   bad= 1 lr=4.31e-04 1.9s
+[20:59:16] [cnngru S0s3] ep  40 train_loss=0.1553 val_loss=0.3455 * bad= 0 lr=4.29e-04 1.9s
+[20:59:18] [cnngru S0s3] ep  41 train_loss=0.1542 val_loss=0.3428 * bad= 0 lr=4.28e-04 1.9s
+[20:59:20] [cnngru S0s3] ep  42 train_loss=0.1444 val_loss=0.3760   bad= 1 lr=4.26e-04 1.9s
+[20:59:22] [cnngru S0s3] ep  43 train_loss=0.1342 val_loss=0.3594   bad= 2 lr=4.24e-04 1.9s
+[20:59:24] [cnngru S0s3] ep  44 train_loss=0.1332 val_loss=0.3995   bad= 3 lr=4.23e-04 1.9s
+[20:59:26] [cnngru S0s3] ep  45 train_loss=0.1297 val_loss=0.2994 * bad= 0 lr=4.21e-04 1.9s
+[20:59:28] [cnngru S0s3] ep  46 train_loss=0.1293 val_loss=0.3607   bad= 1 lr=4.20e-04 1.9s
+[20:59:29] [cnngru S0s3] ep  47 train_loss=0.1232 val_loss=0.3143   bad= 2 lr=4.18e-04 1.9s
+[20:59:31] [cnngru S0s3] ep  48 train_loss=0.1085 val_loss=0.3038   bad= 3 lr=4.16e-04 1.9s
+[20:59:33] [cnngru S0s3] ep  49 train_loss=0.1005 val_loss=0.2465 * bad= 0 lr=4.15e-04 1.9s
+[20:59:35] [cnngru S0s3] ep  50 train_loss=0.1010 val_loss=0.2869   bad= 1 lr=4.13e-04 1.9s
+[20:59:37] [cnngru S0s3] ep  51 train_loss=0.1056 val_loss=0.2774   bad= 2 lr=4.12e-04 1.9s
+[20:59:39] [cnngru S0s3] ep  52 train_loss=0.0934 val_loss=0.3589   bad= 3 lr=4.10e-04 1.9s
+[20:59:41] [cnngru S0s3] ep  53 train_loss=0.0917 val_loss=0.3284   bad= 4 lr=4.08e-04 1.9s
+[20:59:43] [cnngru S0s3] ep  54 train_loss=0.0909 val_loss=0.2774   bad= 5 lr=4.07e-04 1.9s
+[20:59:45] [cnngru S0s3] ep  55 train_loss=0.0762 val_loss=0.3244   bad= 6 lr=4.05e-04 1.9s
+[20:59:47] [cnngru S0s3] ep  56 train_loss=0.0772 val_loss=0.3019   bad= 7 lr=4.04e-04 1.9s
+[20:59:49] [cnngru S0s3] ep  57 train_loss=0.0756 val_loss=0.3613   bad= 8 lr=4.02e-04 1.9s
+[20:59:51] [cnngru S0s3] ep  58 train_loss=0.0745 val_loss=0.2916   bad= 9 lr=4.01e-04 1.9s
+[20:59:53] [cnngru S0s3] ep  59 train_loss=0.0610 val_loss=0.2745   bad=10 lr=3.99e-04 1.9s
+[20:59:55] [cnngru S0s3] ep  60 train_loss=0.0682 val_loss=0.3011   bad=11 lr=3.98e-04 1.9s
+[20:59:56] [cnngru S0s3] ep  61 train_loss=0.0705 val_loss=0.3048   bad=12 lr=3.96e-04 1.9s
+[20:59:58] [cnngru S0s3] ep  62 train_loss=0.0731 val_loss=0.3603   bad=13 lr=3.95e-04 1.9s
+[21:00:00] [cnngru S0s3] ep  63 train_loss=0.0523 val_loss=0.3104   bad=14 lr=3.93e-04 1.9s
+[21:00:02] [cnngru S0s3] ep  64 train_loss=0.0604 val_loss=0.3010   bad=15 lr=3.92e-04 1.9s
+[21:00:04] [cnngru S0s3] ep  65 train_loss=0.0534 val_loss=0.2922   bad=16 lr=3.90e-04 1.9s
+[21:00:06] [cnngru S0s3] ep  66 train_loss=0.0488 val_loss=0.3413   bad=17 lr=3.89e-04 1.9s
+[21:00:08] [cnngru S0s3] ep  67 train_loss=0.0500 val_loss=0.2929   bad=18 lr=3.87e-04 1.9s
+[21:00:10] [cnngru S0s3] ep  68 train_loss=0.0449 val_loss=0.3347   bad=19 lr=3.86e-04 1.9s
+[21:00:12] [cnngru S0s3] ep  69 train_loss=0.0379 val_loss=0.2943   bad=20 lr=3.84e-04 1.9s
+[21:00:14] [cnngru S0s3] ep  70 train_loss=0.0456 val_loss=0.3317   bad=21 lr=3.83e-04 1.9s
+[21:00:16] [cnngru S0s3] ep  71 train_loss=0.0510 val_loss=0.4297   bad=22 lr=3.81e-04 1.9s
+[21:00:18] [cnngru S0s3] ep  72 train_loss=0.0468 val_loss=0.4097   bad=23 lr=3.80e-04 1.9s
+[21:00:20] [cnngru S0s3] ep  73 train_loss=0.0348 val_loss=0.3083   bad=24 lr=3.78e-04 1.9s
+[21:00:21] [cnngru S0s3] ep  74 train_loss=0.0399 val_loss=0.2839   bad=25 lr=3.77e-04 1.9s
+[21:00:21] [cnngru S0s3] early stop at epoch 74 (best 49, val_loss 0.2465)
+[21:00:22] [cnngru S0s3] DONE epochs_run=74 best_epoch=49 best_val_loss=0.2465 wall=143s | TEST n=3250 acc=0.9046 macroF1=0.8858
+[21:00:22] [cnngru S0s4] device=cuda model_seed=20261108 params=1,921,446 train=11698 val=1300 test=3250 | train class counts=[6873, 1700, 1011, 474, 402, 1238] cw=[0.2800000011920929, 1.149999976158142, 1.9299999475479126, 4.110000133514404, 4.849999904632568, 1.5700000524520874]
+[21:00:24] [cnngru S0s4] ep   1 train_loss=0.6385 val_loss=0.8456 * bad= 0 lr=4.98e-04 1.9s
+[21:00:26] [cnngru S0s4] ep   2 train_loss=0.4559 val_loss=0.7183 * bad= 0 lr=4.96e-04 1.9s
+[21:00:27] [cnngru S0s4] ep   3 train_loss=0.4262 val_loss=0.7463   bad= 1 lr=4.94e-04 1.9s
+[21:00:29] [cnngru S0s4] ep   4 train_loss=0.4221 val_loss=0.7049 * bad= 0 lr=4.92e-04 1.9s
+[21:00:31] [cnngru S0s4] ep   5 train_loss=0.4067 val_loss=0.7223   bad= 1 lr=4.91e-04 1.9s
+[21:00:33] [cnngru S0s4] ep   6 train_loss=0.3948 val_loss=0.6641 * bad= 0 lr=4.89e-04 1.9s
+[21:00:35] [cnngru S0s4] ep   7 train_loss=0.3738 val_loss=0.7338   bad= 1 lr=4.87e-04 1.9s
+[21:00:37] [cnngru S0s4] ep   8 train_loss=0.3792 val_loss=0.6852   bad= 2 lr=4.85e-04 1.9s
+[21:00:39] [cnngru S0s4] ep   9 train_loss=0.3828 val_loss=0.6918   bad= 3 lr=4.83e-04 1.9s
+[21:00:41] [cnngru S0s4] ep  10 train_loss=0.3651 val_loss=0.6346 * bad= 0 lr=4.81e-04 1.9s
+[21:00:43] [cnngru S0s4] ep  11 train_loss=0.3458 val_loss=0.6500   bad= 1 lr=4.79e-04 1.9s
+[21:00:45] [cnngru S0s4] ep  12 train_loss=0.3530 val_loss=0.6286 * bad= 0 lr=4.78e-04 1.9s
+[21:00:47] [cnngru S0s4] ep  13 train_loss=0.3552 val_loss=0.6503   bad= 1 lr=4.76e-04 1.9s
+[21:00:49] [cnngru S0s4] ep  14 train_loss=0.3422 val_loss=0.6216 * bad= 0 lr=4.74e-04 1.9s
+[21:00:51] [cnngru S0s4] ep  15 train_loss=0.3288 val_loss=0.6207 * bad= 0 lr=4.72e-04 1.9s
+[21:00:53] [cnngru S0s4] ep  16 train_loss=0.3282 val_loss=0.5933 * bad= 0 lr=4.70e-04 1.9s
+[21:00:54] [cnngru S0s4] ep  17 train_loss=0.3095 val_loss=0.5301 * bad= 0 lr=4.69e-04 1.9s
+[21:00:56] [cnngru S0s4] ep  18 train_loss=0.3060 val_loss=0.6020   bad= 1 lr=4.67e-04 1.9s
+[21:00:58] [cnngru S0s4] ep  19 train_loss=0.2976 val_loss=0.5922   bad= 2 lr=4.65e-04 1.9s
+[21:01:00] [cnngru S0s4] ep  20 train_loss=0.2788 val_loss=0.5128 * bad= 0 lr=4.63e-04 1.9s
+[21:01:02] [cnngru S0s4] ep  21 train_loss=0.2814 val_loss=0.5398   bad= 1 lr=4.62e-04 1.9s
+[21:01:04] [cnngru S0s4] ep  22 train_loss=0.2717 val_loss=0.5555   bad= 2 lr=4.60e-04 1.9s
+[21:01:06] [cnngru S0s4] ep  23 train_loss=0.2554 val_loss=0.5535   bad= 3 lr=4.58e-04 1.9s
+[21:01:08] [cnngru S0s4] ep  24 train_loss=0.2541 val_loss=0.5014 * bad= 0 lr=4.56e-04 1.9s
+[21:01:10] [cnngru S0s4] ep  25 train_loss=0.2351 val_loss=0.4230 * bad= 0 lr=4.55e-04 1.9s
+[21:01:12] [cnngru S0s4] ep  26 train_loss=0.2338 val_loss=0.4419   bad= 1 lr=4.53e-04 1.9s
+[21:01:14] [cnngru S0s4] ep  27 train_loss=0.2287 val_loss=0.4809   bad= 2 lr=4.51e-04 1.9s
+[21:01:16] [cnngru S0s4] ep  28 train_loss=0.2251 val_loss=0.4510   bad= 3 lr=4.49e-04 1.9s
+[21:01:18] [cnngru S0s4] ep  29 train_loss=0.2046 val_loss=0.4394   bad= 4 lr=4.48e-04 1.9s
+[21:01:19] [cnngru S0s4] ep  30 train_loss=0.1996 val_loss=0.4443   bad= 5 lr=4.46e-04 1.9s
+[21:01:21] [cnngru S0s4] ep  31 train_loss=0.1964 val_loss=0.5058   bad= 6 lr=4.44e-04 1.9s
+[21:01:23] [cnngru S0s4] ep  32 train_loss=0.1796 val_loss=0.5397   bad= 7 lr=4.43e-04 1.9s
+[21:01:25] [cnngru S0s4] ep  33 train_loss=0.1667 val_loss=0.4523   bad= 8 lr=4.41e-04 1.9s
+[21:01:27] [cnngru S0s4] ep  34 train_loss=0.1677 val_loss=0.4184 * bad= 0 lr=4.39e-04 1.9s
+[21:01:29] [cnngru S0s4] ep  35 train_loss=0.1630 val_loss=0.3770 * bad= 0 lr=4.38e-04 1.9s
+[21:01:31] [cnngru S0s4] ep  36 train_loss=0.1549 val_loss=0.3284 * bad= 0 lr=4.36e-04 1.9s
+[21:01:33] [cnngru S0s4] ep  37 train_loss=0.1461 val_loss=0.4029   bad= 1 lr=4.34e-04 1.9s
+[21:01:35] [cnngru S0s4] ep  38 train_loss=0.1415 val_loss=0.3628   bad= 2 lr=4.33e-04 1.9s
+[21:01:37] [cnngru S0s4] ep  39 train_loss=0.1383 val_loss=0.3143 * bad= 0 lr=4.31e-04 1.9s
+[21:01:39] [cnngru S0s4] ep  40 train_loss=0.1320 val_loss=0.4060   bad= 1 lr=4.29e-04 1.9s
+[21:01:41] [cnngru S0s4] ep  41 train_loss=0.1334 val_loss=0.3218   bad= 2 lr=4.28e-04 1.9s
+[21:01:43] [cnngru S0s4] ep  42 train_loss=0.1262 val_loss=0.3082 * bad= 0 lr=4.26e-04 1.9s
+[21:01:44] [cnngru S0s4] ep  43 train_loss=0.1161 val_loss=0.2758 * bad= 0 lr=4.24e-04 1.9s
+[21:01:46] [cnngru S0s4] ep  44 train_loss=0.1129 val_loss=0.4412   bad= 1 lr=4.23e-04 1.9s
+[21:01:48] [cnngru S0s4] ep  45 train_loss=0.1063 val_loss=0.3330   bad= 2 lr=4.21e-04 1.9s
+[21:01:50] [cnngru S0s4] ep  46 train_loss=0.1084 val_loss=0.3040   bad= 3 lr=4.20e-04 1.9s
+[21:01:52] [cnngru S0s4] ep  47 train_loss=0.1087 val_loss=0.3352   bad= 4 lr=4.18e-04 1.9s
+[21:01:54] [cnngru S0s4] ep  48 train_loss=0.0982 val_loss=0.2610 * bad= 0 lr=4.16e-04 1.9s
+[21:01:56] [cnngru S0s4] ep  49 train_loss=0.0909 val_loss=0.2930   bad= 1 lr=4.15e-04 1.9s
+[21:01:58] [cnngru S0s4] ep  50 train_loss=0.0856 val_loss=0.3083   bad= 2 lr=4.13e-04 1.9s
+[21:02:00] [cnngru S0s4] ep  51 train_loss=0.0873 val_loss=0.3093   bad= 3 lr=4.12e-04 1.9s
+[21:02:02] [cnngru S0s4] ep  52 train_loss=0.0807 val_loss=0.2729   bad= 4 lr=4.10e-04 1.9s
+[21:02:04] [cnngru S0s4] ep  53 train_loss=0.0824 val_loss=0.2810   bad= 5 lr=4.08e-04 1.9s
+[21:02:06] [cnngru S0s4] ep  54 train_loss=0.0756 val_loss=0.2966   bad= 6 lr=4.07e-04 1.9s
+[21:02:08] [cnngru S0s4] ep  55 train_loss=0.0681 val_loss=0.3044   bad= 7 lr=4.05e-04 1.9s
+[21:02:10] [cnngru S0s4] ep  56 train_loss=0.0765 val_loss=0.2615   bad= 8 lr=4.04e-04 1.9s
+[21:02:11] [cnngru S0s4] ep  57 train_loss=0.0652 val_loss=0.3266   bad= 9 lr=4.02e-04 1.9s
+[21:02:13] [cnngru S0s4] ep  58 train_loss=0.0625 val_loss=0.2444 * bad= 0 lr=4.01e-04 1.9s
+[21:02:15] [cnngru S0s4] ep  59 train_loss=0.0741 val_loss=0.2797   bad= 1 lr=3.99e-04 1.9s
+[21:02:17] [cnngru S0s4] ep  60 train_loss=0.0578 val_loss=0.2884   bad= 2 lr=3.98e-04 1.9s
+[21:02:19] [cnngru S0s4] ep  61 train_loss=0.0578 val_loss=0.2670   bad= 3 lr=3.96e-04 1.9s
+[21:02:21] [cnngru S0s4] ep  62 train_loss=0.0542 val_loss=0.3849   bad= 4 lr=3.95e-04 1.9s
+[21:02:23] [cnngru S0s4] ep  63 train_loss=0.0537 val_loss=0.3468   bad= 5 lr=3.93e-04 1.9s
+[21:02:25] [cnngru S0s4] ep  64 train_loss=0.0539 val_loss=0.3132   bad= 6 lr=3.92e-04 1.9s
+[21:02:27] [cnngru S0s4] ep  65 train_loss=0.0477 val_loss=0.3428   bad= 7 lr=3.90e-04 1.9s
+[21:02:29] [cnngru S0s4] ep  66 train_loss=0.0585 val_loss=0.2859   bad= 8 lr=3.89e-04 1.9s
+[21:02:31] [cnngru S0s4] ep  67 train_loss=0.0525 val_loss=0.2918   bad= 9 lr=3.87e-04 1.9s
+[21:02:33] [cnngru S0s4] ep  68 train_loss=0.0471 val_loss=0.3074   bad=10 lr=3.86e-04 1.9s
+[21:02:35] [cnngru S0s4] ep  69 train_loss=0.0443 val_loss=0.2876   bad=11 lr=3.84e-04 1.9s
+[21:02:36] [cnngru S0s4] ep  70 train_loss=0.0388 val_loss=0.3141   bad=12 lr=3.83e-04 1.9s
+[21:02:38] [cnngru S0s4] ep  71 train_loss=0.0476 val_loss=0.3435   bad=13 lr=3.81e-04 1.9s
+[21:02:40] [cnngru S0s4] ep  72 train_loss=0.0435 val_loss=0.3129   bad=14 lr=3.80e-04 1.9s
+[21:02:42] [cnngru S0s4] ep  73 train_loss=0.0564 val_loss=0.3307   bad=15 lr=3.78e-04 1.9s
+[21:02:44] [cnngru S0s4] ep  74 train_loss=0.0364 val_loss=0.2862   bad=16 lr=3.77e-04 1.9s
+[21:02:46] [cnngru S0s4] ep  75 train_loss=0.0288 val_loss=0.2962   bad=17 lr=3.76e-04 1.9s
+[21:02:48] [cnngru S0s4] ep  76 train_loss=0.0327 val_loss=0.2747   bad=18 lr=3.74e-04 1.9s
+[21:02:50] [cnngru S0s4] ep  77 train_loss=0.0254 val_loss=0.3565   bad=19 lr=3.73e-04 1.9s
+[21:02:52] [cnngru S0s4] ep  78 train_loss=0.0310 val_loss=0.3034   bad=20 lr=3.71e-04 1.9s
+[21:02:54] [cnngru S0s4] ep  79 train_loss=0.0405 val_loss=0.3301   bad=21 lr=3.70e-04 1.9s
+[21:02:56] [cnngru S0s4] ep  80 train_loss=0.0325 val_loss=0.3511   bad=22 lr=3.68e-04 1.9s
+[21:02:58] [cnngru S0s4] ep  81 train_loss=0.0235 val_loss=0.3195   bad=23 lr=3.67e-04 1.9s
+[21:03:00] [cnngru S0s4] ep  82 train_loss=0.0501 val_loss=0.3350   bad=24 lr=3.66e-04 1.9s
+[21:03:01] [cnngru S0s4] ep  83 train_loss=0.0361 val_loss=0.3026   bad=25 lr=3.64e-04 1.9s
+[21:03:01] [cnngru S0s4] early stop at epoch 83 (best 58, val_loss 0.2444)
+[21:03:02] [cnngru S0s4] DONE epochs_run=83 best_epoch=58 best_val_loss=0.2444 wall=160s | TEST n=3250 acc=0.9169 macroF1=0.9040
+[21:03:02] all done

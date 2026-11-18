@@ -1,0 +1,33 @@
+\begin{tabular}{@{}llcccccccc@{}}
+\toprule
+ & & & \multicolumn{5}{c}{Detection rate at $\alpha=0.10$ (\%)} & \multicolumn{2}{c}{AUROC} \\
+\cmidrule(lr){4-8}\cmidrule(lr){9-10}
+Cycles & Score & Estimator & 1--3--5 & 1--4--5 & Fast & Slow & All & Sequence & Tempo \\
+\midrule
+Predicted & D1 & Pooled S1 (primary) & 60.4 & 80.0 & 21.7 & 0.8 & 40.9 & 0.974 & 0.535 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (FazA_S1, pred, D1)
+Predicted & D1 & s01 + s02 only & 60.7 & 80.0 & 19.2 & 2.4 & 40.2 & 0.975 & 0.532 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (ii_s01s02, pred, D1)
+Predicted & D1 & Leave one session out & 100.0 & 100.0 & 33.8 & 0.4 & 59.4 & 0.990 & 0.541 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (i_S2, pred, D1)
+\addlinespace
+Predicted & D2 & Pooled S1 (primary) & 6.8 & 12.5 & 80.0 & 99.2 & 48.7 & 0.508 & 0.961 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (FazA_S1, pred, D2)
+Predicted & D2 & s01 + s02 only & 18.6 & 23.6 & 89.6 & 100.0 & 57.5 & 0.521 & 0.976 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (ii_s01s02, pred, D2)
+Predicted & D2 & Leave one session out & 10.7 & 22.6 & 89.2 & 86.0 & 50.9 & 0.481 & 0.953 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (i_S2, pred, D2)
+\addlinespace
+Predicted & D3 & Pooled S1 (primary) & 25.4 & 47.5 & 92.1 & 92.9 & 63.3 & 0.897 & 0.952 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (FazA_S1, pred, D3)
+Predicted & D3 & s01 + s02 only & 26.4 & 48.0 & 92.9 & 97.3 & 65.3 & 0.911 & 0.966 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (ii_s01s02, pred, D3)
+Predicted & D3 & Leave one session out & 60.7 & 60.0 & 64.6 & 55.2 & 60.1 & 0.933 & 0.922 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (i_S2, pred, D3)
+\addlinespace
+\midrule
+ToF & D1 & Pooled S1 (primary) & 67.0 & 80.0 & 21.2 & 0.8 & 42.6 & 0.970 & 0.521 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (FazA_S1, tof, D1)
+ToF & D1 & s01 + s02 only & 66.0 & 80.0 & 17.1 & 2.3 & 41.7 & 0.972 & 0.555 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (ii_s01s02, tof, D1)
+ToF & D1 & Leave one session out & 100.0 & 100.0 & 31.0 & 0.4 & 58.6 & 0.990 & 0.520 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (i_S2, tof, D1)
+\addlinespace
+ToF & D2 & Pooled S1 (primary) & 9.5 & 15.1 & 69.8 & 87.7 & 44.7 & 0.518 & 0.944 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (FazA_S1, tof, D2)
+ToF & D2 & s01 + s02 only & 6.7 & 9.8 & 81.6 & 93.1 & 46.9 & 0.456 & 0.938 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (ii_s01s02, tof, D2)
+ToF & D2 & Leave one session out & 5.3 & 16.3 & 88.2 & 86.2 & 47.8 & 0.495 & 0.949 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (i_S2, tof, D2)
+\addlinespace
+ToF & D3 & Pooled S1 (primary) & 30.5 & 47.3 & 78.8 & 82.7 & 59.0 & 0.933 & 0.956 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (FazA_S1, tof, D3)
+ToF & D3 & s01 + s02 only & 21.1 & 20.0 & 29.4 & 58.1 & 32.1 & 0.887 & 0.936 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (ii_s01s02, tof, D3)
+ToF & D3 & Leave one session out & 60.0 & 60.0 & 61.6 & 59.2 & 60.2 & 0.941 & 0.926 \\ % [S] faz_a4/04_unseen_anomaly_table.csv (i_S2, tof, D3)
+\addlinespace
+\bottomrule
+\end{tabular}

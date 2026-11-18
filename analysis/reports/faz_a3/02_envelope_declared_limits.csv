@@ -1,0 +1,13 @@
+oturum,tanim,durum,d50_s,d90_s,d50>0.4?,beyan edilen sinir_s
+s01,D-ham,ok,0.05327988126094461,0.48654855570329986,hayir,0.400 (kural tetiklenmedi)
+s01,D-deb,ok,0.09420863738789387,0.5333331548579437,hayir,0.400 (kural tetiklenmedi)
+s02,D-ham,tam ayrisma (tahmin edilemez),,,hayir (araliktan),0.400 (kural tetiklenmedi)
+s02,D-deb,ok,-6.254835700651833,-2.7643721772384904,hayir (araliktan),0.400 (kural tetiklenmedi)
+s03,D-ham,tumu tespit (d50 < min sure),,,hayir (araliktan),0.400 (kural tetiklenmedi)
+s03,D-deb,tumu tespit (d50 < min sure),,,hayir (araliktan),0.400 (kural tetiklenmedi)
+s04,D-ham,tumu tespit (d50 < min sure),,,hayir (araliktan),0.400 (kural tetiklenmedi)
+s04,D-deb,tumu tespit (d50 < min sure),,,hayir (araliktan),0.400 (kural tetiklenmedi)
+s05,D-ham,ok,0.1174894875074659,0.2646154441000065,hayir,0.400 (kural tetiklenmedi)
+s05,D-deb,ok,0.16011748229316558,0.3260505308345736,hayir,0.400 (kural tetiklenmedi)
+s06,D-ham,tumu tespit (d50 < min sure),,,belirsiz,belirsiz
+s06,D-deb,tumu tespit (d50 < min sure),,,belirsiz,belirsiz

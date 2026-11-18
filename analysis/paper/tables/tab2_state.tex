@@ -1,0 +1,16 @@
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+Protocol & Model & Accuracy (\%) & Macro-F1 & Box frames (\%) & None frames (\%) & Transition frames (\%) \\
+\midrule
+\multicolumn{7}{@{}l}{\emph{S1 (cycle-grouped, 5 folds)}} \\
+ & B1 nearest centroid & 61.3 $\pm$ 1.2 & 0.527 $\pm$ 0.014 & 55.0 $\pm$ 3.4 & 65.8 $\pm$ 3.1 & 58.0 $\pm$ 1.4 \\ % [P] faz_a/03_state_table.csv (S1, b1)
+ & \textbf{B2 handcrafted features + random forest} & \textbf{88.4 $\pm$ 1.2} & \textbf{0.856 $\pm$ 0.012} & \textbf{93.3 $\pm$ 0.8} & \textbf{85.0 $\pm$ 1.4} & \textbf{83.4 $\pm$ 1.1} \\ % [P] faz_a/03_state_table.csv (S1, b2)
+ & CNN-only & 77.6 $\pm$ 3.7 & 0.732 $\pm$ 0.035 & 85.8 $\pm$ 1.0 & 71.8 $\pm$ 6.2 & 77.0 $\pm$ 5.6 \\ % [P] faz_a/03_state_table.csv (S1, cnnonly)
+ & CNN--GRU & 86.9 $\pm$ 1.3 & 0.841 $\pm$ 0.014 & 89.4 $\pm$ 2.1 & 85.2 $\pm$ 1.7 & 81.8 $\pm$ 1.1 \\ % [P] faz_a/03_state_table.csv (S1, cnngru)
+\midrule
+\multicolumn{7}{@{}l}{\emph{S2 (leave one session out, 6 folds)}} \\
+ & B1 nearest centroid & 61.4 $\pm$ 2.0 & 0.568 $\pm$ 0.075 & 54.0 $\pm$ 5.7 & 66.6 $\pm$ 2.4 & 58.6 $\pm$ 2.0 \\ % [P] faz_a/03_state_table.csv (S2, b1)
+ & \textbf{B2 handcrafted features + random forest} & \textbf{86.8 $\pm$ 4.6} & \textbf{0.829 $\pm$ 0.094} & \textbf{88.7 $\pm$ 10.0} & \textbf{85.0 $\pm$ 5.2} & \textbf{80.3 $\pm$ 7.3} \\ % [P] faz_a/03_state_table.csv (S2, b2)
+ & CNN--GRU & 84.1 $\pm$ 3.3 & 0.803 $\pm$ 0.078 & 87.1 $\pm$ 7.1 & 81.6 $\pm$ 5.4 & 77.9 $\pm$ 5.5 \\ % [P] faz_a/03_state_table.csv (S2, cnngru)
+\bottomrule
+\end{tabular}

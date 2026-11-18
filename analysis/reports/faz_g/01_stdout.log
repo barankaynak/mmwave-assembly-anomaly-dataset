@@ -1,0 +1,64 @@
+[G-01] plan sha256 58256aadbc8cd81f11f5c25875ac05e241c0f73f60efcdabdb615887355b8345; e1_core sha256 ea5b927640107b3ca7a9d2d32f9adfb38aa0a764a6fee9d83757185a1d87f2c6 (= Phase E record)
+
+====================================================================================================
+1. Gate: estimator (ii) D3 reproduces Table 6
+====================================================================================================
+cycle counts: {'session_02_normal_seq125': 50, 'session_03_normal_seq135': 56, 'session_04_normal_seq145': 45, 'session_05_anomaly_fast': 48, 'session_06_anomaly_slow': 51}
+Traceback (most recent call last):
+  File "<ROOT>\faz_g\01_e1_estimator_ii.py", line 108, in <module>
+    print(NCAL.to_string(index=False))
+          ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'to_string'
+[local_run] faz_g/01_e1_estimator_ii.py exit=1
+[G-01] plan sha256 a51c524bb6f1b5afee8798c08ab0b058640e85ec6f4eca82ddfcc6f4f009848a; e1_core sha256 ea5b927640107b3ca7a9d2d32f9adfb38aa0a764a6fee9d83757185a1d87f2c6 (= Phase E record)
+
+====================================================================================================
+1. Gate: estimator (ii) D3 reproduces Table 6
+====================================================================================================
+cycle counts: {'session_02_normal_seq125': 50, 'session_03_normal_seq135': 56, 'session_04_normal_seq145': 45, 'session_05_anomaly_fast': 48, 'session_06_anomaly_slow': 51}
+ f  n_cal  n_train
+ 0     20       20
+ 1     21       19
+ 2     20       20
+ 3     19       20
+ 4     20       21
+gate (rebuilt, Table 6): {'normal': (0.06, 0.06), 'seq135': (0.2642857142857143, 0.2642857142857143), 'seq145': (0.48, 0.48), 'fast': (0.9291666666666667, 0.9291666666666668), 'slow': (0.9725490196078431, 0.9725490196078432)}
+GATE PASSED
+
+====================================================================================================
+2. E1 + D2 with estimator (ii), alpha = 0.10
+====================================================================================================
+ f route     mu_1     mu_2     mu_5  n_train  n_cal  n_test  cal_max  n_cal_pos
+ 0 1-2-5 8.138167 7.203167 5.636000       20     20     210 0.853333          1
+ 1 1-2-5 8.107719 7.294035 5.495439       19     21     210 0.000000          0
+ 2 1-2-5 7.725333 7.394500 5.641667       20     20     210 0.000000          0
+ 3 1-2-5 7.801167 7.554500 5.831500       20     19     211 0.000000          0
+ 4 1-2-5 8.245079 7.318254 5.706508       21     20     209 0.853333          1
+ atype  n_pairs  n_cycles  E1_D3p    lo    hi  D3_ii  pE_alone  path_pE_only  path_p2_only  path_both  S_E_min  S_E_med
+normal       50        50   0.060 0.021 0.162  0.060     0.020         0.020         0.040      0.000    0.000    0.000
+seq135      280        56   1.000 1.000 1.000  0.264     1.000         0.939         0.000      0.061    9.677   12.765
+seq145      225        45   1.000 1.000 1.000  0.480     1.000         0.867         0.000      0.133   10.470   12.700
+  fast      240        48   0.954 0.896 0.996  0.929     0.229         0.071         0.725      0.158    0.000    0.000
+  slow      255        51   0.973 0.945 0.996  0.973     0.020         0.004         0.953      0.016    0.000    0.000
+   all     1000       200   0.982 0.966 0.994  0.653     0.565         0.476         0.417      0.089    0.000   10.474
+s02 natural_dev rows dropped before tabulation
+normal alarms: D3(ii) 3 | E1+D2 3
+           group  n_folds  auroc_mean  auroc_sd  auprc_mean
+          seq135        5       1.000     0.000       1.000
+          seq145        5       1.000     0.000       1.000
+    seq(135+145)        5       1.000     0.000       1.000
+            fast        5       0.607     0.017       0.867
+            slow        5       0.500     0.022       0.839
+tempo(fast+slow)        5       0.552     0.020       0.919
+
+reading rule (DESIGN_G section 6): case (A)
+With an estimator that never saw the deviation sessions, E1 + D2 detected 100.0% and 100.0% of sequence deviations at a false-alarm rate of 6.0% (3/50). The result does not depend on the estimator having seen these sessions.
+wrote reports/faz_g/01_e1_ii.md
+wrote reports/faz_g/01_e1_ii_summary.csv
+wrote reports/faz_g/01_e1_ii_cycles.csv.gz
+wrote reports/faz_g/01_e1_ii_folds.csv
+wrote reports/faz_g/01_e1_ii_perfold.csv
+wrote reports/faz_g/01_e1_ii_readings.csv
+wrote reports/faz_g/01_e1_ii_auroc.csv
+done in 5.5 s
+[local_run] faz_g/01_e1_estimator_ii.py exit=0

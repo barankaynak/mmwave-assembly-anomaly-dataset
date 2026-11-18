@@ -1,0 +1,37 @@
+<LOCAL_HOME>\Documents\GitHub\mmwave_anomaly\00_dataprepare_all.ipynb
+<unrelated local file, path removed>
+<unrelated local file, path removed>
+<unrelated local file, path removed>
+<unrelated local file, path removed>
+<ROOT>\reports\probe\00_schema.md
+<ROOT>\reports\paper_prep\05_gaps.md
+<ROOT>\reports\novelty\NOVELTY_SCOUT.md
+<ROOT>\reports\faz_b\verify_b.md
+<ROOT>\reports\faz_b\verify_a.md
+<ROOT>\reports\faz_b\B_RESULTS.md
+<ROOT>\reports\faz_b\02_sensing_budget.md
+<ROOT>\probe\common.py
+<ROOT>\probe\00_load.py
+<ROOT>\paper\scripts\gap4_minimisation.py
+<ROOT>\faz_c\DESIGN_C.md
+<ROOT>\faz_b\vr_02_sensing_budget.py
+<ROOT>\faz_b\verify_b_checks_b2.py
+<ROOT>\faz_b\DESIGN_B.md
+<ROOT>\faz_b\b_frames.py
+<ROOT>\faz_b\02_sensing_budget.py
+<ROOT>\faz_b\02b_sensing_budget_report.py
+<unrelated local file, path removed>
+<ROOT_FROZEN>\mmwave_anomaly\mmwave_anomaly\00_dataprepare_all.ipynb
+<unrelated local file, path removed>
+<ROOT_FROZEN>\dataset\README.md
+<ROOT_FROZEN>\dataset\notebooks\00_dataprepare_all.ipynb
+<ARTICLE_DIR>\data_prepare_all.ipynb
+<ARTICLE_DIR>\00_dataprepare_all.md
+<LOCAL_HOME>\Github\jupyter_notebook\data\data.ipynb
+<LOCAL_HOME>\Github\jupyter_notebook\data\working\00_dataprepare_all.ipynb
+<LOCAL_HOME>\Github\jupyter_notebook\data\working\data_prepare_all.ipynb
+<unrelated local file, path removed>
+<unrelated local file, path removed>
+--- ikinci tur (serial.Serial|experiment_data|distance_sensors|video_frames.csv|mmwave_sensor|IWR6843; kayit kodu OLMAYAN, yalniz bu veriyi anan/okuyan dosyalar) ---
+Documents/GitHub/mmwave_anomaly/data/2025.05.15/*/experiment_info.txt (6 adet), Documents/GitHub/mmwave_anomaly/00_dataprepare_all.ipynb, <unrelated local file, path removed> (ilgisiz: baska proje), <LOCAL_SYNC>/Temp/normal/experiment_2025_04_04_12_12_32/experiment_info.txt, <ARTICLE_DIR>/data_prepare_all.ipynb ve 00_dataprepare_all.md
+--- dosya/klasor adi taramasi: mmwave_sensor / uart / recorder adli kayit kodu klasoru yok; mmwave_anomaly.zip icinde .py yok, yalniz notebooklar ve .cfg ---

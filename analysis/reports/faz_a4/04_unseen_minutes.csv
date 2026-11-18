@@ -1,0 +1,11 @@
+kaynak,egitim_penceresi,etiketli_oturumlar,etiketli_dakika
+Faz A (S1 OOF) kat modeli,12998.4,6 oturumun %80'i (5 katin ort.),21.663999999999998
+(i) S2: s02'yi tahmin eden model,13978.0,s01 + s03..s06,23.296666666666667
+(i) S2: s03'ü tahmin eden model,13845.0,"s01, s02, s04..s06",23.075
+(i) S2: 6 modelin ort.,13540.0,diger 5 oturum,22.566666666666666
+(ii) ii_f0,6464.0,s01 (4679) + s02 (1785),10.773333333333333
+(ii) ii_f1,6528.0,s01 (4679) + s02 (1849),10.88
+(ii) ii_f2,6506.0,s01 (4679) + s02 (1827),10.843333333333334
+(ii) ii_f3,6499.0,s01 (4679) + s02 (1820),10.831666666666667
+(ii) ii_f4,6474.0,s01 (4679) + s02 (1795),10.79
+(ii) ii_all,6948.0,s01 (4679) + s02 (2269),11.58

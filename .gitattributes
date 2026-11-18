@@ -1,0 +1,2 @@
+# Keep analysis/ byte-identical to its MANIFEST.sha256 (no line-ending conversion)
+analysis/** -text

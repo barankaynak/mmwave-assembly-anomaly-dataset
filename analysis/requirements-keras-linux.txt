@@ -1,0 +1,7 @@
+# Pins for the Keras run of the article (Linux, Python 3.12.3, GPU build of TensorFlow).
+# tensorflow, keras and numpy are the versions printed in reports/_logs/job-20261105-003141-626-10306.log.
+# pandas is the version of the local Keras environment; the remote pandas version is not recorded in the log.
+tensorflow==2.18.0
+keras==3.9.2
+numpy==2.0.2
+pandas==3.0.6

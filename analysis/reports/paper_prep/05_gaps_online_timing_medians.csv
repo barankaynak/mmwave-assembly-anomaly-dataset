@@ -1,0 +1,8 @@
+cell,atype,quantity,n_alarm_pairs,n_cycles_with_alarm,median,boot_lo,boot_hi,source,tag
+B2 x pred (main),fast,alarm time / cycle duration,221,47,1.0252434976480354,1.0239582492721884,1.026402872085154,"reports/faz_a3/03_online_alarms.csv (alarm_lit, literal definition)",[S]
+B2 x pred (main),normal,alarm time / cycle duration,4,4,0.2951197692419333,0.2850203643852381,1.0190731244802609,"reports/faz_a3/03_online_alarms.csv (alarm_lit, literal definition)",[S]
+B2 x pred (main),seq135,alarm time / cycle duration,71,56,0.2888709032600612,0.276869373116397,0.3110752215274538,"reports/faz_a3/03_online_alarms.csv (alarm_lit, literal definition)",[S]
+B2 x pred (main),seq135,seconds from onset (sequence anomalies),71,56,0.0998989999999935,0.0993304999999935,0.1002129999999965,"reports/faz_a3/03_online_alarms.csv (alarm_lit, literal definition)",[S]
+B2 x pred (main),seq145,alarm time / cycle duration,114,48,0.2927284911916948,0.2777857716537894,0.3035298197642191,"reports/faz_a3/03_online_alarms.csv (alarm_lit, literal definition)",[S]
+B2 x pred (main),seq145,seconds from onset (sequence anomalies),114,48,0.10002599999999964,0.0998089999999933,0.1005639999999914,"reports/faz_a3/03_online_alarms.csv (alarm_lit, literal definition)",[S]
+B2 x pred (main),slow,alarm time / cycle duration,237,51,0.3171608964011135,0.3014603888078523,0.3383545739892292,"reports/faz_a3/03_online_alarms.csv (alarm_lit, literal definition)",[S]
